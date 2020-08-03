@@ -25,6 +25,7 @@ export interface EcrImageScanResultHandlerProps {
 const basicLambdaPolicy = iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole');
 const componentName = 'EcrImageScanResultHandler';
 
+/** A construct for handling ECR image scan complete events and for reporting found vulnerabilities. */
 export class EcrImageScanResultHandler extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: EcrImageScanResultHandlerProps) {
     super(scope, id);    

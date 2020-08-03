@@ -28,6 +28,14 @@ const project = new JsiiProject({
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
   },
+  peerDependencies: {
+    constructs: Semver.pinned('3.0.4'),
+    '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+  },
   python: {
     distName: 'cdk-ecr-image-scan-handler',
     module: 'cdk_ecr_image_scan_handler'
