@@ -35,10 +35,6 @@ const project = new JsiiProject({
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
-  },
-  python: {
-    distName: 'cdk-ecr-image-scan-handler',
-    module: 'cdk_ecr_image_scan_handler'
   }
 });
 

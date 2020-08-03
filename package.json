@@ -109,12 +109,7 @@
   "stability": "experimental",
   "jsii": {
     "outdir": "dist",
-    "targets": {
-      "python": {
-        "distName": "cdk-ecr-image-scan-handler",
-        "module": "cdk_ecr_image_scan_handler"
-      }
-    },
+    "targets": {},
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
