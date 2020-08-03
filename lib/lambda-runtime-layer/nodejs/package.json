@@ -1,0 +1,16 @@
+{
+  "name": "lambda-runtime-layer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.725.0"
+  },
+  "scripts": {
+    "build": "npm i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "Creates a lambda runtime layer that contains only the latest version of AWS SDK"
+}
