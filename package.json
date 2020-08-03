@@ -54,7 +54,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "constructs": "3.0.3",
+    "constructs": "3.0.4",
     "@aws-cdk/core": "1.56.0",
     "@aws-cdk/aws-lambda": "1.56.0",
     "@aws-cdk/aws-iam": "1.56.0",

@@ -21,7 +21,7 @@ const project = new JsiiProject({
     '@types/node': Semver.caret('14.0.11'),
   },
   dependencies: {
-    constructs: Semver.pinned('3.0.3'),
+    constructs: Semver.pinned('3.0.4'),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
