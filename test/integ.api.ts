@@ -13,5 +13,5 @@ const stack = new Stack(mockApp, 'ecr-scan-test-stack', { env });
 new EcrImageScanResultHandler(stack, 'handler', {
   fromAddress: 'from@address.com',
   toAddress: 'to@address.com',
-  notificationTopicArn: 'arn:aws:sns:eu-central-1:176250563161:ecr-repository-scan-completed-topic',
+  notificationTopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
 });
