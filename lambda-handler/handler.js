@@ -1,8 +1,7 @@
-/* eslint-disable import/no-unresolved */
-import * as AWS from 'aws-sdk';
+const AWS = require('aws-sdk');
 const ecr = new AWS.ECR();
 const ses = new AWS.SES();
-const sendEmail = async (subject: string, content: string) => {
+const sendEmail = async (subject, content) => {
   const fromAddress = process.env.FROM_ADDRESS;
   if (!fromAddress) {
     throw new Error('Missing FROM_ADDRESS');
@@ -25,7 +24,7 @@ const sendEmail = async (subject: string, content: string) => {
   console.log(response);
 };
 
-exports.handler = async (event: any) => {
+exports.handler = async (event) => {
   console.log(JSON.stringify(event, undefined, 2));
   const imageScanCompletedEvent = JSON.parse(event.Records[0].Sns.Message);
   const repositoryName = imageScanCompletedEvent.detail['repository-name'];
@@ -47,7 +46,7 @@ exports.handler = async (event: any) => {
   const amountOfFindings = findings.length;
   if (amountOfFindings > 0) {
     const summary = `Found ${amountOfFindings} security findings for ${repositoryName} at ${findingsResult.imageScanFindings.imageScanCompletedAt}`;
-    const combinedDetails = findings.reduce((previous: string, current: any) => `${current.name} (${current.severity}): ${current.uri}\n\n${previous}`, '');
+    const combinedDetails = findings.reduce((previous, current) => `${current.name} (${current.severity}): ${current.uri}\n\n${previous}`, '');
     console.log(summary);
     console.log(combinedDetails);
     await sendEmail(summary, combinedDetails);
