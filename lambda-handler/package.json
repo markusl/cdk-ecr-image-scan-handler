@@ -1,0 +1,16 @@
+{
+  "cdk-lambda": "/asset-output/index.js",
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": true,
+      "engines": {
+        "node": ">= 12"
+      }
+    }
+  }
+}
