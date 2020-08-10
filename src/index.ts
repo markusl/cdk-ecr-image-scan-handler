@@ -57,15 +57,12 @@ export class EcrImageScanResultHandler extends cdk.Construct {
     });
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler', {
-      entry: path.join(__dirname, '../lambda-handler/handler.js'),
+      entry: path.join(__dirname, './lambda-handler/handler.js'),
       runtime: lambda.Runtime.NODEJS_12_X,
       minify: true,
       role: lambdaRole,
       functionName: componentName,
       description: 'Handler for ECR Image Scan results',
-      externalModules: [
-        'aws-sdk', // Use the 'aws-sdk' available in the Lambda runtime
-      ],
       environment: {
         FROM_ADDRESS: props.fromAddress,
         TO_ADDRESS: props.toAddress,
