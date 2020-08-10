@@ -29,7 +29,7 @@ const componentName = 'EcrImageScanResultHandler';
 export class EcrImageScanResultHandler extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: EcrImageScanResultHandlerProps) {
     super(scope, id);    
-    const lambdaCode = lambda.Code.fromAsset(path.join(__dirname, './lambda-handler/'));
+    const lambdaCode = lambda.Code.fromAsset(path.join(__dirname, '../lambda-handler/'));
 
     const roleName = `${componentName}-role`;
     const lambdaRole = new iam.Role(scope, roleName, {

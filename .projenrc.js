@@ -36,7 +36,7 @@ const project = new JsiiProject({
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
-  }
+  },
 });
 
 project.addFields({

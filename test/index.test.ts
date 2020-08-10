@@ -15,7 +15,7 @@ test('Create EcrImageScanResultHandler', () => {
   expect(stack).toHaveResource('AWS::Lambda::Function', {
     Code: {
       S3Bucket: {
-        Ref: 'AssetParameterscdaf69e61e04df580d34ef2c04ddfafa90363b5c7093c505477e9ff732e57b4dS3Bucket816FD4E6',
+        Ref: 'AssetParametersae641365ba1b0f4e4f4f70040d6d0fa59fef4c835ae0e867b06c81580e61460aS3BucketF7853DCF',
       },
       S3Key: {
         'Fn::Join': [
@@ -28,7 +28,7 @@ test('Create EcrImageScanResultHandler', () => {
                   'Fn::Split': [
                     '||',
                     {
-                      Ref: 'AssetParameterscdaf69e61e04df580d34ef2c04ddfafa90363b5c7093c505477e9ff732e57b4dS3VersionKey307081BF',
+                      Ref: 'AssetParametersae641365ba1b0f4e4f4f70040d6d0fa59fef4c835ae0e867b06c81580e61460aS3VersionKeyEF328651',
                     },
                   ],
                 },
@@ -41,7 +41,7 @@ test('Create EcrImageScanResultHandler', () => {
                   'Fn::Split': [
                     '||',
                     {
-                      Ref: 'AssetParameterscdaf69e61e04df580d34ef2c04ddfafa90363b5c7093c505477e9ff732e57b4dS3VersionKey307081BF',
+                      Ref: 'AssetParametersae641365ba1b0f4e4f4f70040d6d0fa59fef4c835ae0e867b06c81580e61460aS3VersionKeyEF328651',
                     },
                   ],
                 },
