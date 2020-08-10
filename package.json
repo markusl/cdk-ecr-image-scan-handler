@@ -32,15 +32,15 @@
   },
   "devDependencies": {
     "constructs": "3.0.4",
-    "@aws-cdk/core": "1.56.0",
-    "@aws-cdk/aws-lambda": "1.56.0",
-    "@aws-cdk/aws-iam": "1.56.0",
-    "@aws-cdk/aws-sns": "1.56.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.56.0",
-    "@aws-cdk/assert": "1.56.0",
+    "@aws-cdk/core": "1.57.0",
+    "@aws-cdk/aws-lambda": "1.57.0",
+    "@aws-cdk/aws-iam": "1.57.0",
+    "@aws-cdk/aws-sns": "1.57.0",
+    "@aws-cdk/aws-sns-subscriptions": "1.57.0",
+    "@aws-cdk/assert": "1.57.0",
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
-    "projen": "^0.3.18",
+    "projen": "^0.3.26",
     "standard-version": "^8.0.1",
     "typescript": "^3.9.5",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
@@ -60,19 +60,19 @@
   },
   "peerDependencies": {
     "constructs": "3.0.4",
-    "@aws-cdk/core": "1.56.0",
-    "@aws-cdk/aws-lambda": "1.56.0",
-    "@aws-cdk/aws-iam": "1.56.0",
-    "@aws-cdk/aws-sns": "1.56.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.56.0"
+    "@aws-cdk/core": "1.57.0",
+    "@aws-cdk/aws-lambda": "1.57.0",
+    "@aws-cdk/aws-iam": "1.57.0",
+    "@aws-cdk/aws-sns": "1.57.0",
+    "@aws-cdk/aws-sns-subscriptions": "1.57.0"
   },
   "dependencies": {
     "constructs": "3.0.4",
-    "@aws-cdk/core": "1.56.0",
-    "@aws-cdk/aws-lambda": "1.56.0",
-    "@aws-cdk/aws-iam": "1.56.0",
-    "@aws-cdk/aws-sns": "1.56.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.56.0"
+    "@aws-cdk/core": "1.57.0",
+    "@aws-cdk/aws-lambda": "1.57.0",
+    "@aws-cdk/aws-iam": "1.57.0",
+    "@aws-cdk/aws-sns": "1.57.0",
+    "@aws-cdk/aws-sns-subscriptions": "1.57.0"
   },
   "bundledDependencies": [],
   "keywords": [

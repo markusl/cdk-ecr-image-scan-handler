@@ -3,7 +3,8 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.56.0';
+const AWS_CDK_LATEST_RELEASE = '1.57.0';
+const CONSTRUCTS_LATEST_RELEASE = '3.0.4';
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results handling';
 
@@ -21,7 +22,7 @@ const project = new JsiiProject({
     '@types/node': Semver.caret('14.0.11'),
   },
   dependencies: {
-    constructs: Semver.pinned('3.0.4'),
+    constructs: Semver.pinned(CONSTRUCTS_LATEST_RELEASE),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
@@ -29,7 +30,7 @@ const project = new JsiiProject({
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
   },
   peerDependencies: {
-    constructs: Semver.pinned('3.0.4'),
+    constructs: Semver.pinned(CONSTRUCTS_LATEST_RELEASE),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),

@@ -29,7 +29,6 @@ const componentName = 'EcrImageScanResultHandler';
 export class EcrImageScanResultHandler extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: EcrImageScanResultHandlerProps) {
     super(scope, id);    
-    const lambdaLayerCode = lambda.Code.fromAsset(path.join(__dirname, './lambda-runtime-layer'));
     const lambdaCode = lambda.Code.fromAsset(path.join(__dirname, './lambda-handler/'));
 
     const roleName = `${componentName}-role`;
@@ -58,12 +57,6 @@ export class EcrImageScanResultHandler extends cdk.Construct {
     });
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
 
-    const lambdaLibLayer = new lambda.LayerVersion(scope, `${componentName}-AwsSdkLayer`, {
-      code: lambdaLayerCode,
-      compatibleRuntimes: [lambda.Runtime.NODEJS_12_X],
-      description: 'A layer to include AWS SDK for Lambda',
-    });
-
     const ecrScanResultHandlerLambda = new lambda.Function(scope, componentName, {
       functionName: componentName,
       description: 'Handler for ECR Image Scan results',
@@ -71,7 +64,6 @@ export class EcrImageScanResultHandler extends cdk.Construct {
       handler: 'handler.handler',
       role: lambdaRole,
       code: lambdaCode,
-      layers: [lambdaLibLayer],
       environment: {
         FROM_ADDRESS: props.fromAddress,
         TO_ADDRESS: props.toAddress,

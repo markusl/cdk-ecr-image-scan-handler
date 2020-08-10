@@ -12,7 +12,6 @@ test('Create EcrImageScanResultHandler', () => {
     notificationTopicArn: 'arn:aws:sns:eu-central-1:176250563161:ecr-repository-scan-completed-topic',
   });
 
-  expect(stack).toHaveResource('AWS::Lambda::LayerVersion');
   expect(stack).toHaveResource('AWS::Lambda::Function', {
     Code: {
       S3Bucket: {
@@ -68,11 +67,6 @@ test('Create EcrImageScanResultHandler', () => {
       },
     },
     FunctionName: 'EcrImageScanResultHandler',
-    Layers: [
-      {
-        Ref: 'EcrImageScanResultHandlerAwsSdkLayerACE1E161',
-      },
-    ],
   })
 });
 
