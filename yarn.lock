@@ -95,6 +95,15 @@
     "@aws-cdk/core" "1.57.0"
     constructs "^3.0.2"
 
+"@aws-cdk/aws-lambda-nodejs@1.57.0":
+  version "1.57.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda-nodejs/-/aws-lambda-nodejs-1.57.0.tgz#c8b7ad1f2fa4cdb1ebe19215d10fc35b440887ae"
+  integrity sha512-/CbMQkn/tShSS9jVn7gQ2yjhjl0bKEX9U1Kjp7ogn5VNox4FHbtP1xuMkOmZWuH56w/ZU+YDE2EdolQmz2XiyQ==
+  dependencies:
+    "@aws-cdk/aws-lambda" "1.57.0"
+    "@aws-cdk/core" "1.57.0"
+    constructs "^3.0.2"
+
 "@aws-cdk/aws-lambda@1.57.0":
   version "1.57.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda/-/aws-lambda-1.57.0.tgz#430314f57e07529faf1aee37b631b38db91f3a60"

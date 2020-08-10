@@ -25,6 +25,7 @@ const project = new JsiiProject({
     constructs: Semver.pinned(CONSTRUCTS_LATEST_RELEASE),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-lambda-nodejs': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
@@ -33,6 +34,7 @@ const project = new JsiiProject({
     constructs: Semver.pinned(CONSTRUCTS_LATEST_RELEASE),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-lambda-nodejs': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
@@ -50,6 +52,7 @@ project.addFields({
 project.gitignore.exclude(
   'cdk.context.json',
   'cdk.out',
+  '.parcel-cache',
   'package.json'
 );
 

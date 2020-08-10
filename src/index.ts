@@ -4,6 +4,7 @@ import * as iam from '@aws-cdk/aws-iam';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subs from '@aws-cdk/aws-sns-subscriptions';
 import * as path from 'path';
+import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
 
 export interface EcrImageScanResultHandlerProps {
   /**
@@ -28,8 +29,7 @@ const componentName = 'EcrImageScanResultHandler';
 /** A construct for handling ECR image scan complete events and for reporting found vulnerabilities. */
 export class EcrImageScanResultHandler extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: EcrImageScanResultHandlerProps) {
-    super(scope, id);    
-    const lambdaCode = lambda.Code.fromAsset(path.join(__dirname, '../lambda-handler/'));
+    super(scope, id);
 
     const roleName = `${componentName}-role`;
     const lambdaRole = new iam.Role(scope, roleName, {
@@ -56,14 +56,16 @@ export class EcrImageScanResultHandler extends cdk.Construct {
       },
     });
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
-
-    const ecrScanResultHandlerLambda = new lambda.Function(scope, componentName, {
+    const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler', {
+      entry: path.join(__dirname, '../lambda-handler/handler.js'),
+      runtime: lambda.Runtime.NODEJS_12_X,
+      minify: true,
+      role: lambdaRole,
       functionName: componentName,
       description: 'Handler for ECR Image Scan results',
-      runtime: lambda.Runtime.NODEJS_12_X,
-      handler: 'handler.handler',
-      role: lambdaRole,
-      code: lambdaCode,
+      externalModules: [
+        'aws-sdk', // Use the 'aws-sdk' available in the Lambda runtime
+      ],
       environment: {
         FROM_ADDRESS: props.fromAddress,
         TO_ADDRESS: props.toAddress,

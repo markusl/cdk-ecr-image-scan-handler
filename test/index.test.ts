@@ -13,45 +13,7 @@ test('Create EcrImageScanResultHandler', () => {
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Code: {
-      S3Bucket: {
-        Ref: 'AssetParametersae641365ba1b0f4e4f4f70040d6d0fa59fef4c835ae0e867b06c81580e61460aS3BucketF7853DCF',
-      },
-      S3Key: {
-        'Fn::Join': [
-          '',
-          [
-            {
-              'Fn::Select': [
-                0,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref: 'AssetParametersae641365ba1b0f4e4f4f70040d6d0fa59fef4c835ae0e867b06c81580e61460aS3VersionKeyEF328651',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              'Fn::Select': [
-                1,
-                {
-                  'Fn::Split': [
-                    '||',
-                    {
-                      Ref: 'AssetParametersae641365ba1b0f4e4f4f70040d6d0fa59fef4c835ae0e867b06c81580e61460aS3VersionKeyEF328651',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    },
-    Handler: 'handler.handler',
+    Handler: 'index.handler',
     Role: {
       'Fn::GetAtt': [
         'EcrImageScanResultHandlerrole5C736648',
@@ -64,6 +26,7 @@ test('Create EcrImageScanResultHandler', () => {
       Variables: {
         FROM_ADDRESS: 'from@address.com',
         TO_ADDRESS: 'to@address.com',
+        AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       },
     },
     FunctionName: 'EcrImageScanResultHandler',
