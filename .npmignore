@@ -16,6 +16,7 @@ dist
 /coverage
 /test
 cdk.context.json
+cdk.staging
 cdk.out
 .parcel-cache
 coverage

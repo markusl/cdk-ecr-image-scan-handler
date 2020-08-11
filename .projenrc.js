@@ -51,6 +51,7 @@ project.addFields({
 
 project.gitignore.exclude(
   'cdk.context.json',
+  'cdk.staging',
   'cdk.out',
   '.parcel-cache',
   'package.json'
@@ -58,6 +59,7 @@ project.gitignore.exclude(
 
 project.npmignore.exclude(
   'cdk.context.json',
+  'cdk.staging',
   'cdk.out',
   '.parcel-cache',
   'coverage',

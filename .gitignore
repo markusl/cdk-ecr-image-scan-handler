@@ -41,6 +41,7 @@ jspm_packages/
 .jsii
 tsconfig.json
 cdk.context.json
+cdk.staging
 cdk.out
 .parcel-cache
 package.json
