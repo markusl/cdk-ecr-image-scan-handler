@@ -57,8 +57,9 @@ project.gitignore.exclude(
 );
 
 project.npmignore.exclude(
-  'cdk.out',
   'cdk.context.json',
+  'cdk.out',
+  '.parcel-cache',
   'coverage',
   'doc'
 );
