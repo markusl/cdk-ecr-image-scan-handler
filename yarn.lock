@@ -3707,7 +3707,7 @@ jsesc@^2.5.1:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
-jsii-diff@^1.5.0:
+jsii-diff@^1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.10.0.tgz#b03aa15024a5587d0aabe169bf2a473771e36b3f"
   integrity sha512-xZ7geLzxTiQj6vvnGwc2TSTKWjbculwUPAv65QxiSG/ChdnqpqpVnEqwXh2uWc/e5Dr3Lzr0/4BXQWZPY+eVQw==
@@ -3729,7 +3729,7 @@ jsii-docgen@^1.3.2:
     jsii-reflect "^1.9.0"
     yargs "^15.4.1"
 
-jsii-pacmak@^1.5.0:
+jsii-pacmak@^1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/jsii-pacmak/-/jsii-pacmak-1.10.0.tgz#529f3f2ae7bf97f9b1078238b61709a294637262"
   integrity sha512-kA9f9mx6SBjxOa1snXmmAjx+CzG2XmoAm+vJHNaLBhqSA1rjfGfmg2BUxWSscwhouvuGC2VQ5DiafPrGfsNsHw==
@@ -3775,7 +3775,7 @@ jsii-rosetta@^1.10.0:
     xmldom "^0.3.0"
     yargs "^15.4.0"
 
-jsii@^1.5.0:
+jsii@^1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.10.0.tgz#86ac53a1b5451abfc66c8f4753436ff4542b6c72"
   integrity sha512-Bo4HTCZ9VOB3Rq85WEBLXlnsBCyjkHAgeUxnlDc8SUsK4cWoUa7JQ+7zs8bEvqgesCH4S1VC1d2ogfVVLeskAA==

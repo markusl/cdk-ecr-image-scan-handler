@@ -10,7 +10,7 @@ const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results han
 
 const project = new JsiiProject({
   name: PROJECT_NAME,
-  jsiiVersion: Semver.caret('1.5.0'),
+  jsiiVersion: Semver.caret('1.10.0'),
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/markusl/cdk-ecr-image-scan-handler.git',
   authorName: 'Markus Lindqvist',
