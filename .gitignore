@@ -40,8 +40,8 @@ jspm_packages/
 /coverage
 .jsii
 tsconfig.json
+.cdk.staging
 cdk.context.json
-cdk.staging
 cdk.out
 .parcel-cache
 package.json

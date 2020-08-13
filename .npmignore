@@ -15,8 +15,8 @@ dist
 /tsconfig.jest.json
 /coverage
 /test
+.cdk.staging
 cdk.context.json
-cdk.staging
 cdk.out
 .parcel-cache
 coverage

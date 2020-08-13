@@ -3,7 +3,7 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.57.0';
+const AWS_CDK_LATEST_RELEASE = '1.58.0';
 const CONSTRUCTS_LATEST_RELEASE = '3.0.4';
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results handling';
@@ -50,16 +50,16 @@ project.addFields({
 });
 
 project.gitignore.exclude(
+  '.cdk.staging',
   'cdk.context.json',
-  'cdk.staging',
   'cdk.out',
   '.parcel-cache',
   'package.json'
 );
 
 project.npmignore.exclude(
+  '.cdk.staging',
   'cdk.context.json',
-  'cdk.staging',
   'cdk.out',
   '.parcel-cache',
   'coverage',
