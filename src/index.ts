@@ -3,7 +3,6 @@ import * as lambda from '@aws-cdk/aws-lambda';
 import * as iam from '@aws-cdk/aws-iam';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subs from '@aws-cdk/aws-sns-subscriptions';
-import * as path from 'path';
 import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
 
 export interface EcrImageScanResultHandlerProps {
@@ -57,8 +56,6 @@ export class EcrImageScanResultHandler extends cdk.Construct {
     });
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler', {
-      projectRoot: '..',
-      entry: path.join(__dirname, '../lambda-handler/handler.ts'),
       runtime: lambda.Runtime.NODEJS_12_X,
       minify: true,
       role: lambdaRole,
