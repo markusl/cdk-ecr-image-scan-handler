@@ -1,29 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const AWS = require('aws-sdk');
+import * as AWS from 'aws-sdk';
+import { sendEmail } from './lambda/sendEmail';
 const ecr = new AWS.ECR();
-const ses = new AWS.SES();
-const sendEmail = async (subject: any, content: any) => {
-  const fromAddress = process.env.FROM_ADDRESS;
-  if (!fromAddress) {
-    throw new Error('Missing FROM_ADDRESS');
-  }
-  const toAddress = process.env.TO_ADDRESS;
-  if (!toAddress) {
-    throw new Error('Missing TO_ADDRESS');
-  }
-  const emailParams = {
-    Source: fromAddress,
-    Destination: {
-      ToAddresses: [toAddress],
-    },
-    Message: {
-      Subject: { Data: subject },
-      Body: { Text: { Data: content } },
-    },
-  };
-  const response = await ses.sendEmail(emailParams).promise();
-  console.log(response);
-};
 
 exports.handler = async (event: any) => {
   console.log(JSON.stringify(event, undefined, 2));

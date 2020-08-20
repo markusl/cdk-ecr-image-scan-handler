@@ -30,6 +30,7 @@ const project = new JsiiProject({
     '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    'aws-sdk': Semver.caret('2.737.0'),
   },
   peerDependencies: {
     constructs: Semver.pinned(CONSTRUCTS_LATEST_RELEASE),
@@ -40,6 +41,9 @@ const project = new JsiiProject({
     '@aws-cdk/aws-sns': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-sns-subscriptions': Semver.pinned(AWS_CDK_LATEST_RELEASE),
   },
+  bundledDependencies: [
+    'aws-sdk',
+  ]
 });
 
 project.addFields({

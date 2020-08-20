@@ -76,9 +76,12 @@
     "@aws-cdk/aws-lambda-nodejs": "1.60.0",
     "@aws-cdk/aws-iam": "1.60.0",
     "@aws-cdk/aws-sns": "1.60.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.60.0"
+    "@aws-cdk/aws-sns-subscriptions": "1.60.0",
+    "aws-sdk": "^2.737.0"
   },
-  "bundledDependencies": [],
+  "bundledDependencies": [
+    "aws-sdk"
+  ],
   "keywords": [
     "aws",
     "ecr",
@@ -117,6 +120,19 @@
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
+    }
+  },
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": true,
+      "engines": {
+        "node": ">= 12"
+      }
     }
   }
 }

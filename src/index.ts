@@ -72,6 +72,7 @@ export class EcrImageScanResultHandler extends cdk.Construct {
         FROM_ADDRESS: props.fromAddress,
         TO_ADDRESS: props.toAddress,
       },
+      nodeModules: ['aws-sdk'],
     });
 
     const notificationTopic = sns.Topic.fromTopicArn(scope, `${componentName}-Topic`, props.notificationTopicArn);
