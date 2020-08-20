@@ -3,7 +3,7 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.59.0';
+const AWS_CDK_LATEST_RELEASE = '1.60.0';
 const CONSTRUCTS_LATEST_RELEASE = '3.0.4';
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results handling';
