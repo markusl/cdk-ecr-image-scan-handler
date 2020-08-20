@@ -41,7 +41,7 @@
     "@aws-cdk/assert": "1.60.0",
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
-    "parcel": "^2.0.0-beta.1",
+    "parcel": "2.0.0-beta.1",
     "projen": "^0.3.38",
     "standard-version": "^8.0.1",
     "typescript": "^3.9.5",
