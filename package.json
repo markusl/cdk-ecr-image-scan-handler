@@ -42,7 +42,7 @@
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
     "parcel": "^2.0.0-beta.1",
-    "projen": "^0.3.37",
+    "projen": "^0.3.38",
     "standard-version": "^8.0.1",
     "typescript": "^3.9.5",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
