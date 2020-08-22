@@ -121,18 +121,5 @@
       "outDir": "lib",
       "rootDir": "src"
     }
-  },
-  "targets": {
-    "cdk-lambda": {
-      "context": "node",
-      "includeNodeModules": {
-        "aws-sdk": false
-      },
-      "sourceMap": false,
-      "minify": true,
-      "engines": {
-        "node": ">= 12"
-      }
-    }
   }
 }
