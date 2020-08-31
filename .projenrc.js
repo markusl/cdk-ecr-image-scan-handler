@@ -3,14 +3,14 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.61.0';
+const AWS_CDK_LATEST_RELEASE = '1.61.1';
 const CONSTRUCTS_LATEST_RELEASE = '3.0.4';
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results handling';
 
 const project = new JsiiProject({
   name: PROJECT_NAME,
-  jsiiVersion: Semver.caret('1.10.0'),
+  jsiiVersion: Semver.caret('1.12.0'),
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/markusl/cdk-ecr-image-scan-handler.git',
   authorName: 'Markus Lindqvist',
