@@ -56,7 +56,7 @@
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
     "parcel": "2.0.0-beta.1",
-    "projen": "^0.3.48",
+    "projen": "^0.3.49",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
