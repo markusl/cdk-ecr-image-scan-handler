@@ -9,12 +9,12 @@
   },
   "bin": {},
   "scripts": {
-    "start": "node node_modules/projen/lib/start-app.js",
-    "projen": "node .projenrc.js && yarn -s install",
+    "start": "npx projen start",
+    "projen": "node .projenrc.js",
     "no-changes": "(git log --oneline -1 | grep -q \"chore(release):\") && echo \"No changes to release.\"",
     "bump": "yarn --silent no-changes || standard-version",
     "release": "yarn --silent no-changes || (yarn bump && git push --follow-tags origin master)",
-    "projen:upgrade": "chmod +w package.json && yarn upgrade -L projen && chmod -w package.json && yarn projen",
+    "projen:upgrade": "yarn upgrade -L projen && CI=\"\" yarn projen",
     "package": "jsii-pacmak",
     "compile": "jsii --silence-warnings=reserved-word --no-fix-peer-dependencies && jsii-docgen",
     "watch": "jsii -w --silence-warnings=reserved-word --no-fix-peer-dependencies",
@@ -56,7 +56,7 @@
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
     "parcel": "2.0.0-beta.1",
-    "projen": "^0.3.49",
+    "projen": "^0.3.57",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -77,7 +77,7 @@
     "@aws-cdk/aws-sns": "1.61.1",
     "@aws-cdk/aws-sns-subscriptions": "1.61.1",
     "@aws-cdk/core": "1.61.1",
-    "aws-sdk": "^2.737.0",
+    "aws-sdk": "^2.745.0",
     "constructs": "3.0.4"
   },
   "bundledDependencies": [
