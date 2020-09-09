@@ -9,7 +9,19 @@ test('Create EcrImageScanResultHandler', () => {
   new EcrImageScanResultHandler(stack, 'ecr-scan-result-handler', {
     fromAddress: 'from@address.com',
     toAddress: 'to@address.com',
-    notificationTopicArn: 'arn:aws:sns:eu-central-1:176250563161:ecr-repository-scan-completed-topic',
+    notificationTopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
+  });
+
+  expect(stack).toHaveResource('AWS::SNS::Subscription', {
+    Protocol: 'lambda',
+    TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
+    Endpoint: {
+      'Fn::GetAtt': [
+        'ecrscanresulthandler25F94C6E',
+        'Arn',
+      ],
+    },
+    Region: 'eu-central-1',
   });
 
   expect(stack).toHaveResource('AWS::Lambda::Function', {
@@ -30,7 +42,7 @@ test('Create EcrImageScanResultHandler', () => {
       },
     },
     FunctionName: 'EcrImageScanResultHandler',
-  })
+  });
 });
 
 
