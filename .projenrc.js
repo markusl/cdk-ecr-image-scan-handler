@@ -10,7 +10,7 @@ const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results han
 
 const project = new JsiiProject({
   name: PROJECT_NAME,
-  jsiiVersion: Semver.caret('1.12.0'),
+  jsiiVersion: Semver.caret('1.13.0'),
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/markusl/cdk-ecr-image-scan-handler.git',
   authorName: 'Markus Lindqvist',
@@ -19,7 +19,7 @@ const project = new JsiiProject({
   devDependencies: {
     '@aws-cdk/assert': Semver.caret(AWS_CDK_LATEST_RELEASE),
     '@types/jest': Semver.caret('26.0.10'),
-    '@types/node': Semver.caret('14.6.0'),
+    '@types/node': Semver.caret('14.11.8'),
     'parcel': Semver.pinned('2.0.0-beta.1'),
   },
   dependencies: {
