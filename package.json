@@ -32,7 +32,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.67.0",
+    "@aws-cdk/assert": "^1.68.0",
     "@aws-cdk/aws-iam": null,
     "@aws-cdk/aws-lambda": null,
     "@aws-cdk/aws-lambda-nodejs": null,
@@ -41,6 +41,7 @@
     "@aws-cdk/core": null,
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
+    "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.19.2",
     "constructs": "3.0.4",
@@ -62,26 +63,28 @@
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-iam": "^1.67.0",
-    "@aws-cdk/aws-lambda": "^1.67.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.67.0",
-    "@aws-cdk/aws-sns": "^1.67.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.67.0",
-    "@aws-cdk/core": "^1.67.0",
+    "@aws-cdk/aws-iam": "^1.68.0",
+    "@aws-cdk/aws-lambda": "^1.68.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.68.0",
+    "@aws-cdk/aws-sns": "^1.68.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.68.0",
+    "@aws-cdk/core": "^1.68.0",
     "constructs": "3.0.4"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "^1.67.0",
-    "@aws-cdk/aws-lambda": "^1.67.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.67.0",
-    "@aws-cdk/aws-sns": "^1.67.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.67.0",
-    "@aws-cdk/core": "^1.67.0",
+    "@aws-cdk/aws-iam": "^1.68.0",
+    "@aws-cdk/aws-lambda": "^1.68.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.68.0",
+    "@aws-cdk/aws-sns": "^1.68.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.68.0",
+    "@aws-cdk/core": "^1.68.0",
     "aws-sdk": "^2.751.0",
-    "constructs": "3.0.4"
+    "constructs": "3.0.4",
+    "node-fetch": "^2.6.1"
   },
   "bundledDependencies": [
-    "aws-sdk"
+    "aws-sdk",
+    "node-fetch"
   ],
   "keywords": [
     "aws",
@@ -175,6 +178,19 @@
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
+    }
+  },
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": true,
+      "engines": {
+        "node": ">= 12"
+      }
     }
   }
 }

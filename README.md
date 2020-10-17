@@ -3,7 +3,7 @@
 
 # cdk-ecr-image-scan-handler
 
-Get automated email notifications from vulnerable ECR images.
+Get automated notifications from AWS scanned ECR images that contain findings.
 
 ## Usage
 
@@ -16,7 +16,7 @@ In your ECR repository setup, create a SNS topic:
   });
 ```
 
-Hook each ECR repository to that topic:
+Hook each ECR repository to report image scan results to the previously created topic:
 
 ```ts
   const ecrRepository = new ecr.Repository(stack, 'DemoEcrRepository', {
@@ -28,7 +28,25 @@ Hook each ECR repository to that topic:
   });
 ```
 
-To get reports about vulnerabilities, set up the handler for the previously created topic:
+### Microsoft Teams reporting for ECR Image scan
+
+To get notifications using Microsoft Teams Webhook, set up the handler for the previously created topic:
+
+```ts
+import { EcrImageScanTeamsWebhookHandler } from 'cdk-ecr-image-scan-handler';
+
+const mockApp = new App();
+const stack = new Stack(mockApp, 'app-stack');
+
+new EcrImageScanTeamsWebhookHandler(stack, 'ecr-scan-result-handler', {
+  webhookUrl: 'https://outlook.office.com/webhook/xxxxx',
+  notificationTopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
+});
+```
+
+### Email results for ECR Image scan
+
+To get reports via email, set up the handler for the previously created topic:
 
 ```ts
 import { EcrImageScanResultHandler } from 'cdk-ecr-image-scan-handler';
