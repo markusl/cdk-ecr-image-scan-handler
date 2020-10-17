@@ -6,7 +6,7 @@ const {
 const AWS_CDK_LATEST_RELEASE = '1.68.0';
 const CONSTRUCTS_LATEST_RELEASE = '3.0.4';
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
-const PROJECT_DESCRIPTION = 'A JSII construct lib for ECR image scan results handling';
+const PROJECT_DESCRIPTION = 'A JSII construct for ECR image scan results processing and reporting via Email or Microsoft Teams webhook';
 
 const project = new JsiiProject({
   name: PROJECT_NAME,
@@ -15,7 +15,7 @@ const project = new JsiiProject({
   repository: 'https://github.com/markusl/cdk-ecr-image-scan-handler.git',
   authorName: 'Markus Lindqvist',
   authorEmail: 'markus.lindqvist@iki.fi',
-  stability: 'experimental',
+  stability: 'stable',
   devDependencies: {
     '@aws-cdk/assert': Semver.caret(AWS_CDK_LATEST_RELEASE),
     '@types/jest': Semver.caret('26.0.14'),
