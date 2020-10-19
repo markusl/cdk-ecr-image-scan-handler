@@ -32,7 +32,7 @@ export const toTeamsSection = (finding: AWS.ECR.ImageScanFinding): TeamsSection 
     }],
     markdown: true,
   };
-}
+};
 
 // See https://docs.microsoft.com/en-us/outlook/actionable-messages/send-via-connectors
 export const getTeamsMessage = (sections: TeamsSection[], repositoryName: string) => {
@@ -54,13 +54,13 @@ export const getTeamsMessage = (sections: TeamsSection[], repositoryName: string
       ],
     }],
   };
-}
+};
 
 export const getTeamsMessageFromFindings = (findings: AWS.ECR.ImageScanFindingList, repositoryName: string) => {
   const sections = findings.map(toTeamsSection);
   console.log(sections);
   return getTeamsMessage(sections, repositoryName);
-}
+};
 
 exports.handler = async (event: any) => {
   console.log(JSON.stringify(event, undefined, 2));

@@ -1,5 +1,5 @@
-import { EcrImageScanResultHandler } from '../src/index';
 import { App, Stack } from '@aws-cdk/core';
+import { EcrImageScanResultHandler } from '../src/index';
 
 const mockApp = new App();
 

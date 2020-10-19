@@ -1,5 +1,5 @@
-import { EcrImageScanResultHandler } from '../src/index';
 import { App, Stack } from '@aws-cdk/core';
+import { EcrImageScanResultHandler } from '../src/index';
 import '@aws-cdk/assert/jest';
 
 test('Create EcrImageScanResultHandler', () => {
@@ -44,6 +44,5 @@ test('Create EcrImageScanResultHandler', () => {
     FunctionName: 'EcrImageScanResultHandler',
   });
 });
-
 
 
