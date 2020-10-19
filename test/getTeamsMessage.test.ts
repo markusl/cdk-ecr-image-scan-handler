@@ -1,5 +1,5 @@
 import '@aws-cdk/assert/jest';
-import { getTeamsMessageFromFindings } from '../src/teams.handler'
+import { getTeamsMessageFromFindings } from '../src/teams.handler';
 
 test('getTeamsMessage', async () => {
   const finding: AWS.ECR.ImageScanFinding = {
@@ -33,11 +33,11 @@ test('getTeamsMessage', async () => {
     'title': 'repository-name ECR image scan results',
     'summary': 'repository-name ECR image scan results',
     '@type': 'MessageCard',
-    'potentialAction':  [
+    'potentialAction': [
       {
         '@type': 'OpenUri',
         'name': 'See in ECR',
-        'targets':  [
+        'targets': [
           {
             os: 'default',
             uri: 'https://eu-central-1.console.aws.amazon.com/ecr/repositories/repository-name/?region=eu-central-1',
@@ -49,7 +49,7 @@ test('getTeamsMessage', async () => {
       {
         activitySubtitle: '[CVE-2019-15847](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15847)',
         activityTitle: 'gcc-9.2.0-r4 (MEDIUM)',
-        facts:  [
+        facts: [
           {
             name: 'Description',
             value: 'The POWER9 backend in GNU Compiler Collection (GCC) before version 10 could optimize multiple calls of the _builtindarn intrinsic into a single call, thus reducing the entropy of the random number generator. This occurred because a volatile operation was not specified. For example, within a single execution of a program, the output of every _builtindarn() call may be the same.',

@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as cdk from '@aws-cdk/core';
-import * as lambda from '@aws-cdk/aws-lambda';
 import * as iam from '@aws-cdk/aws-iam';
+import * as lambda from '@aws-cdk/aws-lambda';
+import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subs from '@aws-cdk/aws-sns-subscriptions';
-import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
+import * as cdk from '@aws-cdk/core';
 
 export interface EcrImageScanResultHandlerProps {
   /**
@@ -52,14 +52,14 @@ export class EcrImageScanResultHandler extends cdk.Construct {
                 'ses:FromAddress': props.fromAddress,
               },
             },
-          }),
-          ]}),
+          })],
+        }),
       },
     });
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
     const entry = fs.existsSync(path.join(__dirname, 'email.handler.ts'))
       ? path.join(__dirname, 'email.handler.ts') // local development
-      : path.join(__dirname, 'email.handler.js') // when published in npm
+      : path.join(__dirname, 'email.handler.js'); // when published in npm
 
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler', {
       entry,
