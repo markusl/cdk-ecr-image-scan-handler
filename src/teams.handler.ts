@@ -35,12 +35,12 @@ export const toTeamsSection = (finding: AWS.ECR.ImageScanFinding): TeamsSection 
 };
 
 // See https://docs.microsoft.com/en-us/outlook/actionable-messages/send-via-connectors
-export const getTeamsMessage = (sections: TeamsSection[], repositoryName: string) => {
+export const getTeamsMessage = (sections: TeamsSection[], findings: AWS.ECR.ImageScanFindingList, repositoryName: string) => {
   return {
     '@type': 'MessageCard',
     '@context': 'http://schema.org/extensions',
-    'title': `${repositoryName} ECR image scan results`,
-    'summary': `${repositoryName} ECR image scan results`,
+    'title': `${repositoryName} scan completed with ${findings.length} findings`,
+    'summary': `${repositoryName} scan completed with ${findings.length} findings`,
     'themeColor': '0076D7',
     sections,
     'potentialAction': [{
@@ -57,9 +57,9 @@ export const getTeamsMessage = (sections: TeamsSection[], repositoryName: string
 };
 
 export const getTeamsMessageFromFindings = (findings: AWS.ECR.ImageScanFindingList, repositoryName: string) => {
-  const sections = findings.map(toTeamsSection);
+  const sections = findings.slice(0, 10).map(toTeamsSection);
   console.log(sections);
-  return getTeamsMessage(sections, repositoryName);
+  return getTeamsMessage(sections, findings, repositoryName);
 };
 
 exports.handler = async (event: any) => {

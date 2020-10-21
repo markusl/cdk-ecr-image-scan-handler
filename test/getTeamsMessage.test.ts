@@ -1,7 +1,8 @@
 import '@aws-cdk/assert/jest';
 import { getTeamsMessageFromFindings } from '../src/teams.handler';
+import { ExampleFindings } from './exampleFindings';
 
-test('getTeamsMessage', async () => {
+test('getTeamsMessageFromFindings basic case', async () => {
   const finding: AWS.ECR.ImageScanFinding = {
     name: 'CVE-2019-15847',
     severity: 'MEDIUM',
@@ -30,8 +31,8 @@ test('getTeamsMessage', async () => {
 
   expect(teamsMessage).toStrictEqual({
     '@context': 'http://schema.org/extensions',
-    'title': 'repository-name ECR image scan results',
-    'summary': 'repository-name ECR image scan results',
+    'title': 'repository-name scan completed with 1 findings',
+    'summary': 'repository-name scan completed with 1 findings',
     '@type': 'MessageCard',
     'potentialAction': [
       {
@@ -59,5 +60,106 @@ test('getTeamsMessage', async () => {
       },
     ],
     'themeColor': '0076D7',
+  });
+});
+
+test('getTeamsMessageFromFindings with large input', async () => {
+  const teamsMessage = getTeamsMessageFromFindings(ExampleFindings.imageScanFindings.findings, 'repository-name');
+  console.log(JSON.stringify(teamsMessage));
+  expect(teamsMessage).toStrictEqual( {
+    '@type': 'MessageCard',
+    '@context': 'http://schema.org/extensions',
+    'title': 'repository-name scan completed with 29 findings',
+    'summary': 'repository-name scan completed with 29 findings',
+    'themeColor': '0076D7',
+    'sections': [{
+      activityTitle: 'cpio-2.11-27.el7 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:3908](https://access.redhat.com/errata/RHSA-2020:3908)',
+      facts: [{
+        name: 'Description',
+        value: 'The cpio packages provide the GNU cpio utility for creating and extracting archives, or copying files from one place to another. Security Fix(es): * cpio: improper input validation when writing tar header fields leads to unexpect tar generation (CVE-2019-14866) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'curl-7.29.0-57.el7_8.1 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:3916](https://access.redhat.com/errata/RHSA-2020:3916)',
+      facts: [{
+        name: 'Description',
+        value: 'The curl packages provide the libcurl library and the curl utility for downloading files from servers using various protocols, including HTTP, FTP, and LDAP. Security Fix(es): * curl: heap buffer overflow in function tftp_receive_packet() (CVE-2019-5482) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'dbus-1:1.10.24-14.el7_8 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:4032](https://access.redhat.com/errata/RHSA-2020:4032)',
+      facts: [{
+        name: 'Description',
+        value: 'D-Bus is a system for sending messages between applications. It is used both for the system-wide message bus service, and as a per-user-login-session messaging facility. Security Fix(es): * dbus: DBusServer DBUS_COOKIE_SHA1 authentication bypass (CVE-2019-12749) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'dbus-libs-1:1.10.24-14.el7_8 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:4032](https://access.redhat.com/errata/RHSA-2020:4032)',
+      facts: [{
+        name: 'Description',
+        value: 'D-Bus is a system for sending messages between applications. It is used both for the system-wide message bus service, and as a per-user-login-session messaging facility. Security Fix(es): * dbus: DBusServer DBUS_COOKIE_SHA1 authentication bypass (CVE-2019-12749) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'e2fsprogs-libs-1.42.9-17.el7 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:4011](https://access.redhat.com/errata/RHSA-2020:4011)',
+      facts: [{
+        name: 'Description',
+        value: 'The e2fsprogs packages provide a number of utilities for creating, checking, modifying, and correcting the ext2, ext3, and ext4 file systems. Security Fix(es): * e2fsprogs: Crafted ext4 partition leads to out-of-bounds write (CVE-2019-5094) * e2fsprogs: Out-of-bounds write in e2fsck/rehash.c (CVE-2019-5188) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'expat-2.1.0-11.el7 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:3952](https://access.redhat.com/errata/RHSA-2020:3952)',
+      facts: [{
+        name: 'Description',
+        value: 'Expat is a C library for parsing XML documents. Security Fix(es): * expat: large number of colons in input makes parser consume high amount of resources, leading to DoS (CVE-2018-20843) * expat: heap-based buffer over-read via crafted XML input (CVE-2019-15903) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'glib2-2.56.1-5.el7 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:3978](https://access.redhat.com/errata/RHSA-2020:3978)',
+      facts: [{
+        name: 'Description',
+        value: 'GLib provides the core application building blocks for libraries and applications written in C. It provides the core object system used in GNOME, the main loop implementation, and a large set of utility functions for strings and common data structures. The Intelligent Input Bus (IBus) is an input method framework for multilingual input in Unix-like operating systems. Security Fix(es): * glib2: file_copy_fallback in gio/gfile.c in GNOME GLib does not properly restrict file permissions while a copy operation is in progress (CVE-2019-12450) * ibus: missing authorization allows local attacker to access the input bus of another user (CVE-2019-14822) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'libcom_err-1.42.9-17.el7 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:4011](https://access.redhat.com/errata/RHSA-2020:4011)',
+      facts: [{
+        name: 'Description',
+        value: 'The e2fsprogs packages provide a number of utilities for creating, checking, modifying, and correcting the ext2, ext3, and ext4 file systems. Security Fix(es): * e2fsprogs: Crafted ext4 partition leads to out-of-bounds write (CVE-2019-5094) * e2fsprogs: Out-of-bounds write in e2fsck/rehash.c (CVE-2019-5188) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'libcurl-7.29.0-57.el7_8.1 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:3916](https://access.redhat.com/errata/RHSA-2020:3916)',
+      facts: [{
+        name: 'Description',
+        value: 'The curl packages provide the libcurl library and the curl utility for downloading files from servers using various protocols, including HTTP, FTP, and LDAP. Security Fix(es): * curl: heap buffer overflow in function tftp_receive_packet() (CVE-2019-5482) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }, {
+      activityTitle: 'libssh2-1.8.0-3.el7 (MEDIUM)',
+      activitySubtitle: '[RHSA-2020:3915](https://access.redhat.com/errata/RHSA-2020:3915)',
+      facts: [{
+        name: 'Description',
+        value: 'The libssh2 packages provide a library that implements the SSH2 protocol. Security Fix(es): * libssh2: integer overflow in SSH_MSG_DISCONNECT logic in packet.c (CVE-2019-17498) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
+      }],
+      markdown: true,
+    }],
+    'potentialAction': [{
+      '@type': 'OpenUri',
+      'name': 'See in ECR',
+      'targets': [{
+        os: 'default',
+        uri: 'https://eu-central-1.console.aws.amazon.com/ecr/repositories/repository-name/?region=eu-central-1',
+      }],
+    }],
   });
 });
