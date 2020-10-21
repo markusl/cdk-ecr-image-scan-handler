@@ -146,7 +146,7 @@
       "category": 2
     }
   },
-  "version": "0.1.37",
+  "version": "0.1.38",
   "types": "lib/index.d.ts",
   "jest": {
     "clearMocks": true,
@@ -175,19 +175,6 @@
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
-    }
-  },
-  "targets": {
-    "cdk-lambda": {
-      "context": "node",
-      "includeNodeModules": {
-        "aws-sdk": false
-      },
-      "sourceMap": false,
-      "minify": true,
-      "engines": {
-        "node": ">= 12"
-      }
     }
   }
 }
