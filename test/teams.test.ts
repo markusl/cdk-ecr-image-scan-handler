@@ -39,7 +39,6 @@ test('Create EcrImageScanTeamsWebhookHandler', () => {
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       },
     },
-    FunctionName: 'EcrImageScanTeamsWebhookHandler',
   });
 
   expect(stack).toHaveResource('AWS::IAM::Role', {

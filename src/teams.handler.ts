@@ -1,6 +1,8 @@
 import * as AWS from 'aws-sdk';
 import fetch from 'node-fetch';
+
 const ecr = new AWS.ECR();
+const region = process.env.AWS_REGION ?? 'us-east-1';
 
 interface TeamsSectionFact {
   name: string;
@@ -45,11 +47,11 @@ export const getTeamsMessage = (sections: TeamsSection[], findings: AWS.ECR.Imag
     sections,
     'potentialAction': [{
       '@type': 'OpenUri',
-      'name': 'See in ECR',
+      'name': `Inspect findings for ${repositoryName} in AWS Console`,
       'targets': [
         {
           os: 'default',
-          uri: `https://eu-central-1.console.aws.amazon.com/ecr/repositories/${repositoryName}/?region=eu-central-1`,
+          uri: `https://${region}.console.aws.amazon.com/ecr/repositories/${repositoryName}/?region=${region}`,
         },
       ],
     }],
@@ -57,7 +59,7 @@ export const getTeamsMessage = (sections: TeamsSection[], findings: AWS.ECR.Imag
 };
 
 export const getTeamsMessageFromFindings = (findings: AWS.ECR.ImageScanFindingList, repositoryName: string) => {
-  const sections = findings.slice(0, 10).map(toTeamsSection);
+  const sections = findings.slice(0, 5).map(toTeamsSection);
   console.log(sections);
   return getTeamsMessage(sections, findings, repositoryName);
 };

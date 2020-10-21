@@ -37,11 +37,11 @@ test('getTeamsMessageFromFindings basic case', async () => {
     'potentialAction': [
       {
         '@type': 'OpenUri',
-        'name': 'See in ECR',
+        'name': 'Inspect findings for repository-name in AWS Console',
         'targets': [
           {
             os: 'default',
-            uri: 'https://eu-central-1.console.aws.amazon.com/ecr/repositories/repository-name/?region=eu-central-1',
+            uri: 'https://us-east-1.console.aws.amazon.com/ecr/repositories/repository-name/?region=us-east-1',
           },
         ],
       },
@@ -112,53 +112,13 @@ test('getTeamsMessageFromFindings with large input', async () => {
         value: 'The e2fsprogs packages provide a number of utilities for creating, checking, modifying, and correcting the ext2, ext3, and ext4 file systems. Security Fix(es): * e2fsprogs: Crafted ext4 partition leads to out-of-bounds write (CVE-2019-5094) * e2fsprogs: Out-of-bounds write in e2fsck/rehash.c (CVE-2019-5188) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
       }],
       markdown: true,
-    }, {
-      activityTitle: 'expat-2.1.0-11.el7 (MEDIUM)',
-      activitySubtitle: '[RHSA-2020:3952](https://access.redhat.com/errata/RHSA-2020:3952)',
-      facts: [{
-        name: 'Description',
-        value: 'Expat is a C library for parsing XML documents. Security Fix(es): * expat: large number of colons in input makes parser consume high amount of resources, leading to DoS (CVE-2018-20843) * expat: heap-based buffer over-read via crafted XML input (CVE-2019-15903) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
-      }],
-      markdown: true,
-    }, {
-      activityTitle: 'glib2-2.56.1-5.el7 (MEDIUM)',
-      activitySubtitle: '[RHSA-2020:3978](https://access.redhat.com/errata/RHSA-2020:3978)',
-      facts: [{
-        name: 'Description',
-        value: 'GLib provides the core application building blocks for libraries and applications written in C. It provides the core object system used in GNOME, the main loop implementation, and a large set of utility functions for strings and common data structures. The Intelligent Input Bus (IBus) is an input method framework for multilingual input in Unix-like operating systems. Security Fix(es): * glib2: file_copy_fallback in gio/gfile.c in GNOME GLib does not properly restrict file permissions while a copy operation is in progress (CVE-2019-12450) * ibus: missing authorization allows local attacker to access the input bus of another user (CVE-2019-14822) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
-      }],
-      markdown: true,
-    }, {
-      activityTitle: 'libcom_err-1.42.9-17.el7 (MEDIUM)',
-      activitySubtitle: '[RHSA-2020:4011](https://access.redhat.com/errata/RHSA-2020:4011)',
-      facts: [{
-        name: 'Description',
-        value: 'The e2fsprogs packages provide a number of utilities for creating, checking, modifying, and correcting the ext2, ext3, and ext4 file systems. Security Fix(es): * e2fsprogs: Crafted ext4 partition leads to out-of-bounds write (CVE-2019-5094) * e2fsprogs: Out-of-bounds write in e2fsck/rehash.c (CVE-2019-5188) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
-      }],
-      markdown: true,
-    }, {
-      activityTitle: 'libcurl-7.29.0-57.el7_8.1 (MEDIUM)',
-      activitySubtitle: '[RHSA-2020:3916](https://access.redhat.com/errata/RHSA-2020:3916)',
-      facts: [{
-        name: 'Description',
-        value: 'The curl packages provide the libcurl library and the curl utility for downloading files from servers using various protocols, including HTTP, FTP, and LDAP. Security Fix(es): * curl: heap buffer overflow in function tftp_receive_packet() (CVE-2019-5482) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
-      }],
-      markdown: true,
-    }, {
-      activityTitle: 'libssh2-1.8.0-3.el7 (MEDIUM)',
-      activitySubtitle: '[RHSA-2020:3915](https://access.redhat.com/errata/RHSA-2020:3915)',
-      facts: [{
-        name: 'Description',
-        value: 'The libssh2 packages provide a library that implements the SSH2 protocol. Security Fix(es): * libssh2: integer overflow in SSH_MSG_DISCONNECT logic in packet.c (CVE-2019-17498) For more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section. Additional Changes: For detailed information on changes in this release, see the Red Hat Enterprise Linux 7.9 Release Notes linked from the References section.',
-      }],
-      markdown: true,
     }],
     'potentialAction': [{
       '@type': 'OpenUri',
-      'name': 'See in ECR',
+      'name': 'Inspect findings for repository-name in AWS Console',
       'targets': [{
         os: 'default',
-        uri: 'https://eu-central-1.console.aws.amazon.com/ecr/repositories/repository-name/?region=eu-central-1',
+        uri: 'https://us-east-1.console.aws.amazon.com/ecr/repositories/repository-name/?region=us-east-1',
       }],
     }],
   });
