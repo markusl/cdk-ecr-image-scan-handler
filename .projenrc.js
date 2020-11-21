@@ -1,9 +1,8 @@
 const {
   AwsCdkConstructLibrary,
-  Semver,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.68.0';
+const AWS_CDK_LATEST_RELEASE = '1.74.0';
 
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct for ECR image scan results processing and reporting via Email or Microsoft Teams webhook';
@@ -24,19 +23,19 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-sns',
     '@aws-cdk/aws-sns-subscriptions',
   ],
-  devDependencies: {
-    '@aws-cdk/assert': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@types/jest': Semver.caret('26.0.14'),
-    '@types/node': Semver.caret('14.11.10'),
-    "@types/node-fetch": Semver.caret('2.5.7'),
-    'parcel': Semver.pinned('2.0.0-beta.1'),
-  },
-  dependencies: {
-    'aws-sdk': Semver.caret('2.751.0'),
-    'aws-lambda': Semver.caret('1.0.6'),
-    'node-fetch': Semver.caret('2.6.1')
-  },
-  bundledDependencies: [
+  devDeps: [
+    '@aws-cdk/assert@^1.74.0',
+    '@types/jest@^26.0.14',
+    '@types/node@^14.11.10',
+    '@types/node-fetch@^2.5.7',
+    'parcel@2.0.0-beta.1',
+  ],
+  deps: [
+    'aws-sdk@^2.751.0',
+    'aws-lambda@^1.0.6',
+    'node-fetch@^2.6.1'
+  ],
+  bundledDeps: [
     'aws-sdk',
     'aws-lambda',
     'node-fetch',
