@@ -2,7 +2,7 @@ const {
   AwsCdkConstructLibrary,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.74.0';
+const AWS_CDK_LATEST_RELEASE = '1.75.0';
 
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct for ECR image scan results processing and reporting via Email or Microsoft Teams webhook';
@@ -28,7 +28,7 @@ const project = new AwsCdkConstructLibrary({
     '@types/jest@^26.0.14',
     '@types/node@^14.11.10',
     '@types/node-fetch@^2.5.7',
-    'parcel@2.0.0-beta.1',
+    'esbuild@0.8.14',
   ],
   deps: [
     'aws-sdk@^2.751.0',
