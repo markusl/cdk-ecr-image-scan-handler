@@ -64,7 +64,6 @@ export class EcrImageScanResultHandler extends cdk.Construct {
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler', {
       entry,
       runtime: lambda.Runtime.NODEJS_12_X,
-      minify: true,
       role: lambdaRole,
       functionName: componentName,
       description: 'Handler for ECR Image Scan results',
@@ -72,7 +71,6 @@ export class EcrImageScanResultHandler extends cdk.Construct {
         FROM_ADDRESS: props.fromAddress,
         TO_ADDRESS: props.toAddress,
       },
-      nodeModules: ['aws-sdk'],
     });
 
     const notificationTopic = sns.Topic.fromTopicArn(scope, `${componentName}-Topic`, props.notificationTopicArn);

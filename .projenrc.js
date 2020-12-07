@@ -2,7 +2,7 @@ const {
   AwsCdkConstructLibrary,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.75.0';
+const AWS_CDK_LATEST_RELEASE = '1.77.0';
 
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct for ECR image scan results processing and reporting via Email or Microsoft Teams webhook';
@@ -33,21 +33,21 @@ const project = new AwsCdkConstructLibrary({
   deps: [
     'aws-sdk@^2.751.0',
     'aws-lambda@^1.0.6',
-    'node-fetch@^2.6.1'
+    'node-fetch@^2.6.1',
   ],
   bundledDeps: [
     'aws-sdk',
     'aws-lambda',
     'node-fetch',
-  ]
+  ],
 });
 
 project.addFields({
-  'keywords': [
+  keywords: [
     'aws',
     'ecr',
-    'imagescan'
-  ]
+    'imagescan',
+  ],
 });
 
 project.gitignore.exclude(
@@ -55,7 +55,7 @@ project.gitignore.exclude(
   'cdk.context.json',
   'cdk.out',
   '.parcel-cache',
-  'package.json'
+  'package.json',
 );
 
 project.npmignore.exclude(
@@ -64,7 +64,7 @@ project.npmignore.exclude(
   'cdk.out',
   '.parcel-cache',
   'coverage',
-  'doc'
+  'doc',
 );
 
 project.synth();

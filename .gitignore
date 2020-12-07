@@ -48,6 +48,7 @@ cdk.context.json
 cdk.out
 .parcel-cache
 package.json
+!/.projen/tasks.json
 !/package.json
 !/.npmignore
 !/LICENSE
@@ -60,6 +61,7 @@ package.json
 !/.mergify.yml
 !/.github/dependabot.yml
 !/.github/pull_request_template.md
+!/.github/workflows/rebuild-bot.yml
 !/src
 !/tsconfig.jest.json
 !/.eslintrc.json
