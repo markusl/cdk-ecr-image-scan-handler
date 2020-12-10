@@ -17,7 +17,7 @@ test('Create EcrImageScanResultHandler', () => {
     TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
     Endpoint: {
       'Fn::GetAtt': [
-        'ecrscanresulthandler25F94C6E',
+        'ecrscanresulthandlerEmailHandler46CCC244',
         'Arn',
       ],
     },

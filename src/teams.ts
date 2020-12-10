@@ -1,4 +1,3 @@
-import * as path from 'path';
 import * as iam from '@aws-cdk/aws-iam';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
@@ -25,8 +24,7 @@ export class EcrImageScanTeamsWebhookHandler extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: EcrImageScanTeamsWebhookHandlerProps) {
     super(scope, id);
 
-    const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler-teams', {
-      entry: path.join(__dirname, 'teams.handler.ts'),
+    const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'TeamsHandler', {
       runtime: lambda.Runtime.NODEJS_12_X,
       description: 'ECR Image Scan results handler with Teams Webhook integration',
       environment: {

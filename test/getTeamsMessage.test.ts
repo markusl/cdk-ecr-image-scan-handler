@@ -1,5 +1,5 @@
 import '@aws-cdk/assert/jest';
-import { getTeamsMessageFromFindings } from '../src/teams.handler';
+import { getTeamsMessageFromFindings } from '../src/teams.TeamsHandler';
 import { ExampleFindings } from './exampleFindings';
 
 test('getTeamsMessageFromFindings basic case', async () => {

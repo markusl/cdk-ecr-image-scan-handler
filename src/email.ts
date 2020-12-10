@@ -1,4 +1,3 @@
-import * as path from 'path';
 import * as iam from '@aws-cdk/aws-iam';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
@@ -57,8 +56,7 @@ export class EcrImageScanResultHandler extends cdk.Construct {
     });
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
 
-    const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'handler', {
-      entry: path.join(__dirname, 'email.handler.ts'),
+    const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'EmailHandler', {
       runtime: lambda.Runtime.NODEJS_12_X,
       role: lambdaRole,
       functionName: componentName,

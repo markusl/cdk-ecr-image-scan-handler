@@ -16,7 +16,7 @@ test('Create EcrImageScanTeamsWebhookHandler', () => {
     TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
     Endpoint: {
       'Fn::GetAtt': [
-        'ecrscanresulthandlerhandlerteams956A0AFA',
+        'ecrscanresulthandlerTeamsHandler4B51F183',
         'Arn',
       ],
     },
@@ -27,7 +27,7 @@ test('Create EcrImageScanTeamsWebhookHandler', () => {
     Handler: 'index.handler',
     Role: {
       'Fn::GetAtt': [
-        'ecrscanresulthandlerhandlerteamsServiceRole3F9C7C1D',
+        'ecrscanresulthandlerTeamsHandlerServiceRoleC491FAD8',
         'Arn',
       ],
     },
