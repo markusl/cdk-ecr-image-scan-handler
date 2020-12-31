@@ -854,6 +854,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@types/aws-lambda@^8.10.68":
+  version "8.10.68"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.68.tgz#51d5727e49e5ae13303adb10e2e8ffee7df12c71"
+  integrity sha512-0/0ghix1WXU8xJxvRx/VtmAesLR6+dPFWrNhQ90Pq6oOYN3x+oRVPnjjYNOIRuEd7fmKovl7s6ILCXMnbDr4Mg==
+
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.9"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.9.tgz#77e59d438522a6fb898fa43dc3455c6e72f3963d"
@@ -1331,10 +1336,10 @@ aws-sdk@*:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.817.0:
-  version "2.818.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.818.0.tgz#5e71742f2a2727dc313458071e6e5a343fc08d85"
-  integrity sha512-xxIEdaKXtrEZNVUvKiW8MRj1Ux2tH/ubDLl8+tnrfhNOJbq5u5FfD56Kui4Ca+CG4xamQ5LaBktVYWAEyaMtUw==
+aws-sdk@^2.819.0:
+  version "2.819.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.819.0.tgz#bc2d878543cc170af2c58704422bcfc38c08dc3b"
+  integrity sha512-Eu/YVodZN6oBL5P3NtUJDeZwlV2kPEn4PKfK+5kQmQnxx1+EepP9SvYel7f7RfYi9XtzsMnUz7ms5p1DsRAa6Q==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -5156,10 +5161,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.12.2:
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.12.2.tgz#7b29f915ad7ce482dd902b56903899eb3925f214"
-  integrity sha512-ZD2j8flYp3QJ+0//9A0WlHEvCOVC1MEaQD1paxdevr/hzmmLxGovGJ9GdanD3TS6WrKJyyRTbcxUfJVC4RxQ1w==
+projen@^0.12.8:
+  version "0.12.8"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.12.8.tgz#4ddd6d3aac4c49ad0cd82dd36f825d4448d65024"
+  integrity sha512-8ItpFEJp7/DL0KkqxSC6KuNiI7OgHBAwW/pfMl8LYGNqMge5tQ2CwHTfECF1Bw6SKpYgZylUcg2XDvRvwk9gOg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"

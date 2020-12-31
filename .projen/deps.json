@@ -11,6 +11,11 @@
       "type": "build"
     },
     {
+      "name": "@types/aws-lambda",
+      "version": "^8.10.68",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -100,7 +105,7 @@
     },
     {
       "name": "projen",
-      "version": "^0.12.2",
+      "version": "^0.12.8",
       "type": "build"
     },
     {
@@ -201,7 +206,7 @@
     },
     {
       "name": "aws-sdk",
-      "version": "^2.817.0",
+      "version": "^2.819.0",
       "type": "runtime"
     },
     {
