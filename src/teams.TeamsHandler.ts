@@ -1,3 +1,4 @@
+import type * as AWSLambda from 'aws-lambda';
 import * as AWS from 'aws-sdk';
 import fetch from 'node-fetch';
 
@@ -64,7 +65,7 @@ export const getTeamsMessageFromFindings = (findings: AWS.ECR.ImageScanFindingLi
   return getTeamsMessage(sections, findings, repositoryName);
 };
 
-exports.handler = async (event: any) => {
+exports.handler = async (event: AWSLambda.SNSEvent) => {
   console.log(JSON.stringify(event, undefined, 2));
 
   if (!process.env.WEBHOOK_URL) {
@@ -73,9 +74,11 @@ exports.handler = async (event: any) => {
 
   const imageScanCompletedEvent = JSON.parse(event.Records[0].Sns.Message);
   const repositoryName = imageScanCompletedEvent.detail['repository-name'];
-  const params = {
+  const imageDigest = imageScanCompletedEvent.detail['image-digest'];
+
+  const params: AWS.ECR.DescribeImageScanFindingsRequest = {
     imageId: {
-      imageTag: 'latest',
+      imageDigest,
     },
     repositoryName,
   };

@@ -30,7 +30,8 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.80.0",
+    "@aws-cdk/assert": "^1.81.0",
+    "@types/aws-lambda": "^8.10.68",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.10",
     "@types/node-fetch": "^2.5.7",
@@ -49,29 +50,29 @@
     "jsii-pacmak": "^1.11.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.12.2",
+    "projen": "^0.12.8",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-iam": "^1.80.0",
-    "@aws-cdk/aws-lambda": "^1.80.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.80.0",
-    "@aws-cdk/aws-sns": "^1.80.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.80.0",
-    "@aws-cdk/core": "^1.80.0",
+    "@aws-cdk/aws-iam": "^1.81.0",
+    "@aws-cdk/aws-lambda": "^1.81.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.81.0",
+    "@aws-cdk/aws-sns": "^1.81.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.81.0",
+    "@aws-cdk/core": "^1.81.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "^1.80.0",
-    "@aws-cdk/aws-lambda": "^1.80.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.80.0",
-    "@aws-cdk/aws-sns": "^1.80.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.80.0",
-    "@aws-cdk/core": "^1.80.0",
+    "@aws-cdk/aws-iam": "^1.81.0",
+    "@aws-cdk/aws-lambda": "^1.81.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.81.0",
+    "@aws-cdk/aws-sns": "^1.81.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.81.0",
+    "@aws-cdk/core": "^1.81.0",
     "aws-lambda": "^1.0.6",
-    "aws-sdk": "^2.817.0",
+    "aws-sdk": "^2.819.0",
     "node-fetch": "^2.6.1"
   },
   "bundledDependencies": [

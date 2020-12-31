@@ -1,14 +1,18 @@
+import type * as AWSLambda from 'aws-lambda';
 import * as AWS from 'aws-sdk';
 import { sendEmail } from './lambda/sendEmail';
+
 const ecr = new AWS.ECR();
 
-exports.handler = async (event: any) => {
+exports.handler = async (event: AWSLambda.SNSEvent) => {
   console.log(JSON.stringify(event, undefined, 2));
   const imageScanCompletedEvent = JSON.parse(event.Records[0].Sns.Message);
   const repositoryName = imageScanCompletedEvent.detail['repository-name'];
-  const params = {
+  const imageDigest = imageScanCompletedEvent.detail['image-digest'];
+
+  const params: AWS.ECR.DescribeImageScanFindingsRequest = {
     imageId: {
-      imageTag: 'latest',
+      imageDigest,
     },
     repositoryName,
   };
