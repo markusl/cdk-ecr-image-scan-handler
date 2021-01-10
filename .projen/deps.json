@@ -7,7 +7,7 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "build"
     },
     {
@@ -51,7 +51,7 @@
     },
     {
       "name": "esbuild",
-      "version": "0.8.26",
+      "version": "0.8.31",
       "type": "build"
     },
     {
@@ -105,7 +105,7 @@
     },
     {
       "name": "projen",
-      "version": "^0.12.8",
+      "version": "^0.14.9",
       "type": "build"
     },
     {
@@ -123,11 +123,15 @@
       "type": "build"
     },
     {
-      "name": "aws-lambda",
+      "name": "@aws-sdk/client-ecr",
       "type": "bundled"
     },
     {
-      "name": "aws-sdk",
+      "name": "@aws-sdk/client-ses",
+      "type": "bundled"
+    },
+    {
+      "name": "aws-lambda",
       "type": "bundled"
     },
     {
@@ -136,32 +140,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "peer"
     },
     {
@@ -171,42 +175,47 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.81.0",
+      "version": "^1.85.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-ecr",
+      "version": "^3.3.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-ses",
+      "version": "^3.3.0",
       "type": "runtime"
     },
     {
       "name": "aws-lambda",
       "version": "^1.0.6",
-      "type": "runtime"
-    },
-    {
-      "name": "aws-sdk",
-      "version": "^2.819.0",
       "type": "runtime"
     },
     {

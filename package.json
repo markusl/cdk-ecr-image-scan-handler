@@ -30,14 +30,14 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.81.0",
+    "@aws-cdk/assert": "^1.85.0",
     "@types/aws-lambda": "^8.10.68",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.10",
     "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
-    "esbuild": "0.8.26",
+    "esbuild": "0.8.31",
     "eslint": "^6.8.0",
     "eslint-import-resolver-node": "^0.3.3",
     "eslint-import-resolver-typescript": "^2.0.0",
@@ -50,34 +50,36 @@
     "jsii-pacmak": "^1.11.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.12.8",
+    "projen": "^0.14.9",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-iam": "^1.81.0",
-    "@aws-cdk/aws-lambda": "^1.81.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.81.0",
-    "@aws-cdk/aws-sns": "^1.81.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.81.0",
-    "@aws-cdk/core": "^1.81.0",
+    "@aws-cdk/aws-iam": "^1.85.0",
+    "@aws-cdk/aws-lambda": "^1.85.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.85.0",
+    "@aws-cdk/aws-sns": "^1.85.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.85.0",
+    "@aws-cdk/core": "^1.85.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "^1.81.0",
-    "@aws-cdk/aws-lambda": "^1.81.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.81.0",
-    "@aws-cdk/aws-sns": "^1.81.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.81.0",
-    "@aws-cdk/core": "^1.81.0",
+    "@aws-cdk/aws-iam": "^1.85.0",
+    "@aws-cdk/aws-lambda": "^1.85.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.85.0",
+    "@aws-cdk/aws-sns": "^1.85.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.85.0",
+    "@aws-cdk/core": "^1.85.0",
+    "@aws-sdk/client-ecr": "^3.3.0",
+    "@aws-sdk/client-ses": "^3.3.0",
     "aws-lambda": "^1.0.6",
-    "aws-sdk": "^2.819.0",
     "node-fetch": "^2.6.1"
   },
   "bundledDependencies": [
+    "@aws-sdk/client-ecr",
+    "@aws-sdk/client-ses",
     "aws-lambda",
-    "aws-sdk",
     "node-fetch"
   ],
   "keywords": [
@@ -89,8 +91,18 @@
   "license": "Apache-2.0",
   "version": "0.1.48",
   "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
     "clearMocks": true,
     "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "clover",
+      "text"
+    ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
@@ -98,9 +110,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "testMatch": [
-      "**/__tests__/**/*.ts?(x)",
-      "**/?(*.)+(spec|test).ts?(x)"
+    "watchPathIgnorePatterns": [
+      "/node_modules/"
     ],
     "reporters": [
       "default",
