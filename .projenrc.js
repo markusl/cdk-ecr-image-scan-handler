@@ -30,6 +30,7 @@ const project = new AwsCdkConstructLibrary({
     '@types/node@^14.11.10',
     '@types/node-fetch@^2.5.7',
     'esbuild@0.8.31',
+    'typescript@4.1.3',
   ],
   deps: [
     '@aws-sdk/client-ecr@^3.3.0',

@@ -123,6 +123,11 @@
       "type": "build"
     },
     {
+      "name": "typescript",
+      "version": "4.1.3",
+      "type": "build"
+    },
+    {
       "name": "@aws-sdk/client-ecr",
       "type": "bundled"
     },
