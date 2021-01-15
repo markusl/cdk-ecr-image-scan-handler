@@ -1,8 +1,8 @@
+import * as ECR from '@aws-sdk/client-ecr';
 import type * as AWSLambda from 'aws-lambda';
-import * as AWS from 'aws-sdk';
 import fetch from 'node-fetch';
 
-const ecr = new AWS.ECR();
+const ecr = new ECR.ECR({ });
 const region = process.env.AWS_REGION ?? 'us-east-1';
 
 interface TeamsSectionFact {
@@ -17,7 +17,7 @@ interface TeamsSection {
   markdown: boolean;
 }
 
-export const toTeamsSection = (finding: AWS.ECR.ImageScanFinding): TeamsSection => {
+export const toTeamsSection = (finding: ECR.ImageScanFinding): TeamsSection => {
   const getPackageName = () => {
     const name = finding.attributes?.find((a) => a.key === 'package_name');
     const version = finding.attributes?.find((a) => a.key === 'package_version');
@@ -38,7 +38,7 @@ export const toTeamsSection = (finding: AWS.ECR.ImageScanFinding): TeamsSection 
 };
 
 // See https://docs.microsoft.com/en-us/outlook/actionable-messages/send-via-connectors
-export const getTeamsMessage = (sections: TeamsSection[], findings: AWS.ECR.ImageScanFindingList, repositoryName: string) => {
+export const getTeamsMessage = (sections: TeamsSection[], findings: ECR.ImageScanFinding[], repositoryName: string) => {
   return {
     '@type': 'MessageCard',
     '@context': 'http://schema.org/extensions',
@@ -59,7 +59,7 @@ export const getTeamsMessage = (sections: TeamsSection[], findings: AWS.ECR.Imag
   };
 };
 
-export const getTeamsMessageFromFindings = (findings: AWS.ECR.ImageScanFindingList, repositoryName: string) => {
+export const getTeamsMessageFromFindings = (findings: ECR.ImageScanFinding[], repositoryName: string) => {
   const sections = findings.slice(0, 5).map(toTeamsSection);
   console.log(sections);
   return getTeamsMessage(sections, findings, repositoryName);
@@ -76,15 +76,15 @@ exports.handler = async (event: AWSLambda.SNSEvent) => {
   const repositoryName = imageScanCompletedEvent.detail['repository-name'];
   const imageDigest = imageScanCompletedEvent.detail['image-digest'];
 
-  const params: AWS.ECR.DescribeImageScanFindingsRequest = {
+  const params: ECR.DescribeImageScanFindingsRequest = {
     imageId: {
       imageDigest,
     },
     repositoryName,
   };
-  const findingsResult = await ecr.describeImageScanFindings(params).promise();
-  if (findingsResult.$response.error || !findingsResult.imageScanFindings) {
-    throw new Error(JSON.stringify(findingsResult.$response.error));
+  const findingsResult = await ecr.describeImageScanFindings(params);
+  if (!findingsResult.imageScanFindings) {
+    throw new Error('imageScanFindings was undefined');
   }
   const findings = findingsResult.imageScanFindings.findings;
   if (!findings) {
