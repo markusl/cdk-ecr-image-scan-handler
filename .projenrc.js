@@ -2,7 +2,7 @@ const {
   AwsCdkConstructLibrary,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.85.0';
+const AWS_CDK_LATEST_RELEASE = '1.91.0';
 
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct for ECR image scan results processing and reporting via Email or Microsoft Teams webhook';
@@ -14,6 +14,7 @@ const project = new AwsCdkConstructLibrary({
   authorName: 'Markus Lindqvist',
   authorEmail: 'markus.lindqvist@iki.fi',
   stability: 'stable',
+  defaultReleaseBranch: 'master',
   cdkVersion: AWS_CDK_LATEST_RELEASE,
   cdkDependencies: [
     '@aws-cdk/core',
@@ -29,18 +30,17 @@ const project = new AwsCdkConstructLibrary({
     '@types/jest@^26.0.14',
     '@types/node@^14.11.10',
     '@types/node-fetch@^2.5.7',
-    'esbuild@0.8.31',
+    'esbuild@0.8.52',
     'typescript@4.1.3',
   ],
   deps: [
-    '@aws-sdk/client-ecr@^3.3.0',
-    '@aws-sdk/client-ses@^3.3.0',
     'aws-lambda@^1.0.6',
     'node-fetch@^2.6.1',
   ],
+  peerDeps: [
+  ],
   bundledDeps: [
-    '@aws-sdk/client-ecr',
-    '@aws-sdk/client-ses',
+    'aws-sdk',
     'aws-lambda',
     'node-fetch',
   ],
@@ -54,21 +54,13 @@ project.addFields({
   ],
 });
 
-project.gitignore.exclude(
+const common_exclude = [
   '.cdk.staging',
   'cdk.context.json',
   'cdk.out',
-  '.parcel-cache',
-  'package.json',
-);
-
-project.npmignore.exclude(
-  '.cdk.staging',
-  'cdk.context.json',
-  'cdk.out',
-  '.parcel-cache',
   'coverage',
   'doc',
-);
-
+];
+project.gitignore.exclude(...common_exclude);
+project.npmignore.exclude(...common_exclude);
 project.synth();

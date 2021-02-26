@@ -1,6 +1,6 @@
-import { SES } from '@aws-sdk/client-ses';
+import * as AWS from 'aws-sdk';
 
-const ses = new SES({ });
+const ses = new AWS.SES();
 
 export const sendEmail = async (subject: any, content: any) => {
   const fromAddress = process.env.FROM_ADDRESS;
@@ -21,6 +21,6 @@ export const sendEmail = async (subject: any, content: any) => {
       Body: { Text: { Data: content } },
     },
   };
-  const response = await ses.sendEmail(emailParams);
+  const response = await ses.sendEmail(emailParams).promise();
   console.log(response);
 };

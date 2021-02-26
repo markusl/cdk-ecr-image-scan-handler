@@ -1,10 +1,10 @@
 import '@aws-cdk/assert/jest';
-import * as ECR from '@aws-sdk/client-ecr';
+import * as AWS from 'aws-sdk';
 import { getTeamsMessageFromFindings } from '../src/teams.TeamsHandler';
 import { ExampleFindings } from './exampleFindings';
 
 test('getTeamsMessageFromFindings basic case', async () => {
-  const finding: ECR.ImageScanFinding = {
+  const finding: AWS.ECR.ImageScanFinding = {
     name: 'CVE-2019-15847',
     severity: 'MEDIUM',
     description: 'The POWER9 backend in GNU Compiler Collection (GCC) before version 10 could optimize multiple calls of the _builtindarn intrinsic into a single call, thus reducing the entropy of the random number generator. This occurred because a volatile operation was not specified. For example, within a single execution of a program, the output of every _builtindarn() call may be the same.',

@@ -7,7 +7,7 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "build"
     },
     {
@@ -41,17 +41,15 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "version": "^4.3.0",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
-      "version": "^4.3.0",
       "type": "build"
     },
     {
       "name": "esbuild",
-      "version": "0.8.31",
+      "version": "0.8.52",
       "type": "build"
     },
     {
@@ -96,21 +94,17 @@
       "type": "build"
     },
     {
-      "name": "jsii-release",
-      "type": "build"
-    },
-    {
       "name": "json-schema",
       "type": "build"
     },
     {
       "name": "projen",
-      "version": "^0.14.9",
+      "version": "^0.16.19",
       "type": "build"
     },
     {
       "name": "standard-version",
-      "version": "^9.0.0",
+      "version": "^9",
       "type": "build"
     },
     {
@@ -119,7 +113,6 @@
     },
     {
       "name": "typescript",
-      "version": "^3.9.5",
       "type": "build"
     },
     {
@@ -128,15 +121,11 @@
       "type": "build"
     },
     {
-      "name": "@aws-sdk/client-ecr",
-      "type": "bundled"
-    },
-    {
-      "name": "@aws-sdk/client-ses",
-      "type": "bundled"
-    },
-    {
       "name": "aws-lambda",
+      "type": "bundled"
+    },
+    {
+      "name": "aws-sdk",
       "type": "bundled"
     },
     {
@@ -145,32 +134,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "peer"
     },
     {
@@ -180,42 +169,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.85.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.85.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-sdk/client-ecr",
-      "version": "^3.3.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-sdk/client-ses",
-      "version": "^3.3.0",
+      "version": "^1.91.0",
       "type": "runtime"
     },
     {
