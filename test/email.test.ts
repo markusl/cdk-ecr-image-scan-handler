@@ -32,7 +32,7 @@ test('Create EcrImageScanResultHandler', () => {
         'Arn',
       ],
     },
-    Runtime: 'nodejs12.x',
+    Runtime: 'nodejs14.x',
     Description: 'Handler for ECR Image Scan results',
     Environment: {
       Variables: {

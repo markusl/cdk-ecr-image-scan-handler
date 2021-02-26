@@ -57,7 +57,7 @@ export class EcrImageScanResultHandler extends cdk.Construct {
     lambdaRole.addManagedPolicy(basicLambdaPolicy);
 
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'EmailHandler', {
-      runtime: lambda.Runtime.NODEJS_12_X,
+      runtime: lambda.Runtime.NODEJS_14_X,
       role: lambdaRole,
       functionName: componentName,
       description: 'Handler for ECR Image Scan results',
