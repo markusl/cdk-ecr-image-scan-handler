@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.51](https://github.com/markusl/cdk-ecr-image-scan-handler/compare/v0.1.50...v0.1.51) (2021-03-27)
+
+
+### Bug Fixes
+
+* Upgrade projen ([bd4da2e](https://github.com/markusl/cdk-ecr-image-scan-handler/commit/bd4da2ebacf87c06fd3593857382e1a0fc7c3265))
+
 ### [0.1.50](https://github.com/markusl/cdk-ecr-image-scan-handler/compare/v0.1.49...v0.1.50) (2021-02-26)
 
 
