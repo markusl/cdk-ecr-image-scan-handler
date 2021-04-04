@@ -7,7 +7,7 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "build"
     },
     {
@@ -36,7 +36,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^14.11.10",
+      "version": "^14.14.37",
       "type": "build"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "name": "esbuild",
-      "version": "0.8.52",
+      "version": "0.11.5",
       "type": "build"
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "name": "projen",
-      "version": "^0.17.17",
+      "version": "^0.17.20",
       "type": "build"
     },
     {
@@ -134,32 +134,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "peer"
     },
     {
@@ -169,32 +169,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.91.0",
+      "version": "^1.96.0",
       "type": "runtime"
     },
     {
