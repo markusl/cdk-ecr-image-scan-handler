@@ -3,7 +3,7 @@
 
 # cdk-ecr-image-scan-handler
 
-Get automated notifications from AWS scanned ECR images that contain findings.
+With this CDK construct you can get automated notifications from ECR images that contain security findings when the AWS ECR image scan finishes.
 
 ## Usage
 
