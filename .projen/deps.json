@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "build"
     },
     {
@@ -12,11 +12,6 @@
     },
     {
       "name": "@types/jest",
-      "type": "build"
-    },
-    {
-      "name": "@types/jest",
-      "version": "^26.0.23",
       "type": "build"
     },
     {
@@ -30,11 +25,6 @@
       "type": "build"
     },
     {
-      "name": "@types/node",
-      "version": "^15.3.0",
-      "type": "build"
-    },
-    {
       "name": "@typescript-eslint/eslint-plugin",
       "type": "build"
     },
@@ -44,7 +34,6 @@
     },
     {
       "name": "esbuild",
-      "version": "0.12.0",
       "type": "build"
     },
     {
@@ -98,13 +87,7 @@
       "type": "build"
     },
     {
-      "name": "npm-check-updates",
-      "version": "^11",
-      "type": "build"
-    },
-    {
       "name": "projen",
-      "version": "^0.17.93",
       "type": "build"
     },
     {
@@ -121,11 +104,6 @@
       "type": "build"
     },
     {
-      "name": "typescript",
-      "version": "4.2.4",
-      "type": "build"
-    },
-    {
       "name": "aws-lambda",
       "type": "bundled"
     },
@@ -139,32 +117,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "peer"
     },
     {
@@ -174,32 +152,32 @@
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.104.0",
+      "version": "^1.118.0",
       "type": "runtime"
     },
     {
