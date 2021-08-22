@@ -1,8 +1,8 @@
+import * as ECR from '@aws-sdk/client-ecr';
 import type * as AWSLambda from 'aws-lambda';
-import * as AWS from 'aws-sdk';
 import { sendEmail } from './lambda/sendEmail';
 
-const ecr = new AWS.ECR();
+const ecr = new ECR.ECRClient({});
 
 exports.handler = async (event: AWSLambda.SNSEvent) => {
   console.log(JSON.stringify(event, undefined, 2));
@@ -10,15 +10,15 @@ exports.handler = async (event: AWSLambda.SNSEvent) => {
   const repositoryName = imageScanCompletedEvent.detail['repository-name'];
   const imageDigest = imageScanCompletedEvent.detail['image-digest'];
 
-  const params: AWS.ECR.DescribeImageScanFindingsRequest = {
+  const params = new ECR.DescribeImageScanFindingsCommand({
     imageId: {
       imageDigest,
     },
     repositoryName,
-  };
-  const findingsResult = await ecr.describeImageScanFindings(params).promise();
-  if (findingsResult.$response.error || !findingsResult.imageScanFindings) {
-    throw new Error(JSON.stringify(findingsResult.$response.error));
+  });
+  const findingsResult = await ecr.send(params);
+  if (!findingsResult.imageScanFindings) {
+    throw new Error(JSON.stringify('imageScanFindings was undefined'));
   }
   const findings = findingsResult.imageScanFindings.findings;
   if (!findings) {

@@ -1,6 +1,6 @@
-import * as AWS from 'aws-sdk';
+import * as SES from '@aws-sdk/client-ses';
 
-const ses = new AWS.SES();
+const ses = new SES.SESClient({});
 
 export const sendEmail = async (subject: any, content: any) => {
   const fromAddress = process.env.FROM_ADDRESS;
@@ -11,7 +11,7 @@ export const sendEmail = async (subject: any, content: any) => {
   if (!toAddress) {
     throw new Error('Missing TO_ADDRESS');
   }
-  const emailParams = {
+  const emailParams = new SES.SendEmailCommand({
     Source: fromAddress,
     Destination: {
       ToAddresses: [toAddress],
@@ -20,7 +20,7 @@ export const sendEmail = async (subject: any, content: any) => {
       Subject: { Data: subject },
       Body: { Text: { Data: content } },
     },
-  };
-  const response = await ses.sendEmail(emailParams).promise();
+  });
+  const response = await ses.send(emailParams);
   console.log(response);
 };

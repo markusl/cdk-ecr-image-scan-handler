@@ -34,7 +34,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.118.0",
+    "@aws-cdk/assert": "^1.119.0",
     "@types/aws-lambda": "^8.10.76",
     "@types/jest": "^26.0.23",
     "@types/node": "^10.17.0",
@@ -54,34 +54,36 @@
     "jsii-pacmak": "^1.22.0",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
-    "projen": "^0.27.27",
+    "projen": "^0.27.32",
     "standard-version": "^9",
     "ts-jest": "^27.0.4",
     "typescript": "4.2.4"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-iam": "^1.118.0",
-    "@aws-cdk/aws-lambda": "^1.118.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.118.0",
-    "@aws-cdk/aws-sns": "^1.118.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.118.0",
-    "@aws-cdk/core": "^1.118.0",
+    "@aws-cdk/aws-iam": "^1.119.0",
+    "@aws-cdk/aws-lambda": "^1.119.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.119.0",
+    "@aws-cdk/aws-sns": "^1.119.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.119.0",
+    "@aws-cdk/core": "^1.119.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "^1.118.0",
-    "@aws-cdk/aws-lambda": "^1.118.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.118.0",
-    "@aws-cdk/aws-sns": "^1.118.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.118.0",
-    "@aws-cdk/core": "^1.118.0",
+    "@aws-cdk/aws-iam": "^1.119.0",
+    "@aws-cdk/aws-lambda": "^1.119.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.119.0",
+    "@aws-cdk/aws-sns": "^1.119.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.119.0",
+    "@aws-cdk/core": "^1.119.0",
+    "@aws-sdk/client-ecr": "^3.27.0",
+    "@aws-sdk/client-ses": "^3.27.0",
     "aws-lambda": "^1.0.6",
-    "aws-sdk": "^2.828.0",
     "node-fetch": "^2.6.1"
   },
   "bundledDependencies": [
+    "@aws-sdk/client-ecr",
+    "@aws-sdk/client-ses",
     "aws-lambda",
-    "aws-sdk",
     "node-fetch"
   ],
   "keywords": [
