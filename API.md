@@ -1,99 +1,136 @@
-# API Reference
+# API Reference <a name="API Reference"></a>
 
-**Classes**
+## Constructs <a name="Constructs"></a>
 
-Name|Description
-----|-----------
-[EcrImageScanResultHandler](#cdk-ecr-image-scan-handler-ecrimagescanresulthandler)|A construct for handling ECR image scan complete events and for reporting found vulnerabilities.
-[EcrImageScanTeamsWebhookHandler](#cdk-ecr-image-scan-handler-ecrimagescanteamswebhookhandler)|A construct for handling ECR image scan complete events and for reporting found vulnerabilities in Microsoft Teams using a webhook.
-
-
-**Structs**
-
-Name|Description
-----|-----------
-[EcrImageScanResultHandlerProps](#cdk-ecr-image-scan-handler-ecrimagescanresulthandlerprops)|*No description*
-[EcrImageScanTeamsWebhookHandlerProps](#cdk-ecr-image-scan-handler-ecrimagescanteamswebhookhandlerprops)|*No description*
-
-
-
-## class EcrImageScanResultHandler  <a id="cdk-ecr-image-scan-handler-ecrimagescanresulthandler"></a>
+### EcrImageScanResultHandler <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler"></a>
 
 A construct for handling ECR image scan complete events and for reporting found vulnerabilities.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+#### Initializer <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.Initializer"></a>
 
-### Initializer
+```typescript
+import { EcrImageScanResultHandler } from 'cdk-ecr-image-scan-handler'
 
-
-
-
-```ts
 new EcrImageScanResultHandler(scope: Construct, id: string, props: EcrImageScanResultHandlerProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[EcrImageScanResultHandlerProps](#cdk-ecr-image-scan-handler-ecrimagescanresulthandlerprops)</code>)  *No description*
-  * **fromAddress** (<code>string</code>)  The sender address. 
-  * **notificationTopicArn** (<code>string</code>)  The notification topic ARN that delivers the event when a scan is finished. 
-  * **toAddress** (<code>string</code>)  The receiver address. 
+##### `scope`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.parameter.props"></a>
+
+- *Type:* [`cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps`](#cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps)
+
+---
 
 
 
 
-## class EcrImageScanTeamsWebhookHandler  <a id="cdk-ecr-image-scan-handler-ecrimagescanteamswebhookhandler"></a>
+
+### EcrImageScanTeamsWebhookHandler <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler"></a>
 
 A construct for handling ECR image scan complete events and for reporting found vulnerabilities in Microsoft Teams using a webhook.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+#### Initializer <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.Initializer"></a>
 
-### Initializer
+```typescript
+import { EcrImageScanTeamsWebhookHandler } from 'cdk-ecr-image-scan-handler'
 
-
-
-
-```ts
 new EcrImageScanTeamsWebhookHandler(scope: Construct, id: string, props: EcrImageScanTeamsWebhookHandlerProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[EcrImageScanTeamsWebhookHandlerProps](#cdk-ecr-image-scan-handler-ecrimagescanteamswebhookhandlerprops)</code>)  *No description*
-  * **notificationTopicArn** (<code>string</code>)  The notification topic ARN that delivers the event when a scan is finished. 
-  * **webhookUrl** (<code>string</code>)  The Teams webhook URL where to report the results to. 
+##### `scope`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.parameter.scope"></a>
 
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
 
+---
 
+##### `id`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.parameter.id"></a>
 
-## struct EcrImageScanResultHandlerProps  <a id="cdk-ecr-image-scan-handler-ecrimagescanresulthandlerprops"></a>
+- *Type:* `string`
 
+---
 
+##### `props`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.parameter.props"></a>
 
+- *Type:* [`cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps`](#cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps)
 
-
-
-Name | Type | Description 
------|------|-------------
-**fromAddress** | <code>string</code> | The sender address.
-**notificationTopicArn** | <code>string</code> | The notification topic ARN that delivers the event when a scan is finished.
-**toAddress** | <code>string</code> | The receiver address.
-
-
-
-## struct EcrImageScanTeamsWebhookHandlerProps  <a id="cdk-ecr-image-scan-handler-ecrimagescanteamswebhookhandlerprops"></a>
+---
 
 
 
 
 
+## Structs <a name="Structs"></a>
 
-Name | Type | Description 
------|------|-------------
-**notificationTopicArn** | <code>string</code> | The notification topic ARN that delivers the event when a scan is finished.
-**webhookUrl** | <code>string</code> | The Teams webhook URL where to report the results to.
+### EcrImageScanResultHandlerProps <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { EcrImageScanResultHandlerProps } from 'cdk-ecr-image-scan-handler'
+
+const ecrImageScanResultHandlerProps: EcrImageScanResultHandlerProps = { ... }
+```
+
+##### `fromAddress`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps.property.fromAddress"></a>
+
+- *Type:* `string`
+
+The sender address.
+
+---
+
+##### `notificationTopicArn`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps.property.notificationTopicArn"></a>
+
+- *Type:* `string`
+
+The notification topic ARN that delivers the event when a scan is finished.
+
+---
+
+##### `toAddress`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps.property.toAddress"></a>
+
+- *Type:* `string`
+
+The receiver address.
+
+---
+
+### EcrImageScanTeamsWebhookHandlerProps <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { EcrImageScanTeamsWebhookHandlerProps } from 'cdk-ecr-image-scan-handler'
+
+const ecrImageScanTeamsWebhookHandlerProps: EcrImageScanTeamsWebhookHandlerProps = { ... }
+```
+
+##### `notificationTopicArn`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps.property.notificationTopicArn"></a>
+
+- *Type:* `string`
+
+The notification topic ARN that delivers the event when a scan is finished.
+
+---
+
+##### `webhookUrl`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps.property.webhookUrl"></a>
+
+- *Type:* `string`
+
+The Teams webhook URL where to report the results to.
+
+---
 
 
 
