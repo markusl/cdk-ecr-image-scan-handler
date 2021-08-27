@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.57](https://github.com/markusl/cdk-ecr-image-scan-handler/compare/v0.1.56...v0.1.57) (2021-08-27)
+
+### Features
+
+* AWS CDK 2.0 support ([ec3ff9b](https://github.com/markusl/cdk-ecr-image-scan-handler/commit/ec3ff9bda3113343f3fc6132aeca0e7f95407a90))
+
 ### [0.1.52](https://github.com/markusl/cdk-ecr-image-scan-handler/compare/v0.1.51...v0.1.52) (2021-04-04)
 
 
