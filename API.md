@@ -16,7 +16,7 @@ new EcrImageScanResultHandler(scope: Construct, id: string, props: EcrImageScanR
 
 ##### `scope`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.parameter.scope"></a>
 
-- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+- *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
@@ -50,7 +50,7 @@ new EcrImageScanTeamsWebhookHandler(scope: Construct, id: string, props: EcrImag
 
 ##### `scope`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.parameter.scope"></a>
 
-- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+- *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 

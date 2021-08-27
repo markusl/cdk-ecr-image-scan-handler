@@ -1,4 +1,4 @@
-import { App, Stack } from '@aws-cdk/core';
+import { App, Stack } from 'aws-cdk-lib';
 import { EcrImageScanTeamsWebhookHandler } from '../src/teams';
 import '@aws-cdk/assert/jest';
 
@@ -70,5 +70,3 @@ test('Create EcrImageScanTeamsWebhookHandler', () => {
     ],
   });
 });
-
-

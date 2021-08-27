@@ -2,7 +2,7 @@ const {
   AwsCdkConstructLibrary,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.119.0';
+const AWS_CDK_LATEST_RELEASE = '2.0.0-rc.19';
 
 const PROJECT_NAME = 'cdk-ecr-image-scan-handler';
 const PROJECT_DESCRIPTION = 'A JSII construct for ECR image scan results processing and reporting via Email or Microsoft Teams webhook';
@@ -16,23 +16,19 @@ const project = new AwsCdkConstructLibrary({
   stability: 'stable',
   defaultReleaseBranch: 'master',
   cdkVersion: AWS_CDK_LATEST_RELEASE,
+  docgen: true,
   cdkDependencies: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-lambda-nodejs',
-    '@aws-cdk/aws-iam',
-    '@aws-cdk/aws-sns',
-    '@aws-cdk/aws-sns-subscriptions',
+    'aws-cdk-lib',
   ],
   devDeps: [
     '@types/aws-lambda',
     '@types/node-fetch',
     'esbuild',
-    'typescript',
   ],
   deps: [
     'aws-lambda',
     'node-fetch',
+    'constructs@^10.0.5',
   ],
   peerDeps: [
   ],
@@ -53,7 +49,6 @@ project.addFields({
 });
 
 const common_exclude = [
-  '.cdk.staging',
   'cdk.context.json',
   'cdk.out',
   'coverage',

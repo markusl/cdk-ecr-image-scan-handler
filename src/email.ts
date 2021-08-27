@@ -1,9 +1,11 @@
-import * as iam from '@aws-cdk/aws-iam';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
-import * as sns from '@aws-cdk/aws-sns';
-import * as sns_subs from '@aws-cdk/aws-sns-subscriptions';
-import * as cdk from '@aws-cdk/core';
+import {
+  aws_iam as iam,
+  aws_lambda as lambda,
+  aws_lambda_nodejs as lambda_nodejs,
+  aws_sns as sns,
+  aws_sns_subscriptions as sns_subs,
+} from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 
 export interface EcrImageScanResultHandlerProps {
   /**
@@ -26,8 +28,8 @@ const basicLambdaPolicy = iam.ManagedPolicy.fromAwsManagedPolicyName('service-ro
 const componentName = 'EcrImageScanResultHandler';
 
 /** A construct for handling ECR image scan complete events and for reporting found vulnerabilities. */
-export class EcrImageScanResultHandler extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: EcrImageScanResultHandlerProps) {
+export class EcrImageScanResultHandler extends Construct {
+  constructor(scope: Construct, id: string, props: EcrImageScanResultHandlerProps) {
     super(scope, id);
 
     const roleName = `${componentName}-role`;

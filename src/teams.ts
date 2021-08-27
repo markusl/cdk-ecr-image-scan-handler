@@ -1,9 +1,11 @@
-import * as iam from '@aws-cdk/aws-iam';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as lambda_nodejs from '@aws-cdk/aws-lambda-nodejs';
-import * as sns from '@aws-cdk/aws-sns';
-import * as sns_subs from '@aws-cdk/aws-sns-subscriptions';
-import * as cdk from '@aws-cdk/core';
+import {
+  aws_iam as iam,
+  aws_lambda as lambda,
+  aws_lambda_nodejs as lambda_nodejs,
+  aws_sns as sns,
+  aws_sns_subscriptions as sns_subs,
+} from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 
 export interface EcrImageScanTeamsWebhookHandlerProps {
   /**
@@ -20,8 +22,8 @@ export interface EcrImageScanTeamsWebhookHandlerProps {
 const componentName = 'EcrImageScanTeamsWebhookHandler';
 
 /** A construct for handling ECR image scan complete events and for reporting found vulnerabilities in Microsoft Teams using a webhook. */
-export class EcrImageScanTeamsWebhookHandler extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: EcrImageScanTeamsWebhookHandlerProps) {
+export class EcrImageScanTeamsWebhookHandler extends Construct {
+  constructor(scope: Construct, id: string, props: EcrImageScanTeamsWebhookHandlerProps) {
     super(scope, id);
 
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'TeamsHandler', {
