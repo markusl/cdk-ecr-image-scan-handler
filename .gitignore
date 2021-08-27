@@ -48,7 +48,6 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
-.cdk.staging
 cdk.context.json
 cdk.out
 coverage

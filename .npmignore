@@ -22,7 +22,6 @@ tsconfig.tsbuildinfo
 /.eslintrc.json
 /tsconfig.eslint.json
 !.jsii
-.cdk.staging
 cdk.context.json
 cdk.out
 coverage
