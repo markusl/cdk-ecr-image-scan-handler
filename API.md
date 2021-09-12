@@ -6,7 +6,7 @@
 
 A construct for handling ECR image scan complete events and for reporting found vulnerabilities.
 
-#### Initializer <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.Initializer"></a>
+#### Initializers <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.Initializer"></a>
 
 ```typescript
 import { EcrImageScanResultHandler } from 'cdk-ecr-image-scan-handler'
@@ -40,7 +40,7 @@ new EcrImageScanResultHandler(scope: Construct, id: string, props: EcrImageScanR
 
 A construct for handling ECR image scan complete events and for reporting found vulnerabilities in Microsoft Teams using a webhook.
 
-#### Initializer <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.Initializer"></a>
+#### Initializers <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.Initializer"></a>
 
 ```typescript
 import { EcrImageScanTeamsWebhookHandler } from 'cdk-ecr-image-scan-handler'
