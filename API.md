@@ -6,7 +6,7 @@
 
 A construct for handling ECR image scan complete events and for reporting found vulnerabilities.
 
-#### Initializer <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.Initializer"></a>
+#### Initializers <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandler.Initializer"></a>
 
 ```typescript
 import { EcrImageScanResultHandler } from 'cdk-ecr-image-scan-handler'
@@ -40,7 +40,7 @@ new EcrImageScanResultHandler(scope: Construct, id: string, props: EcrImageScanR
 
 A construct for handling ECR image scan complete events and for reporting found vulnerabilities in Microsoft Teams using a webhook.
 
-#### Initializer <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.Initializer"></a>
+#### Initializers <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandler.Initializer"></a>
 
 ```typescript
 import { EcrImageScanTeamsWebhookHandler } from 'cdk-ecr-image-scan-handler'
@@ -84,6 +84,10 @@ const ecrImageScanResultHandlerProps: EcrImageScanResultHandlerProps = { ... }
 
 ##### `fromAddress`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps.property.fromAddress"></a>
 
+```typescript
+public readonly fromAddress: string;
+```
+
 - *Type:* `string`
 
 The sender address.
@@ -92,6 +96,10 @@ The sender address.
 
 ##### `notificationTopicArn`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps.property.notificationTopicArn"></a>
 
+```typescript
+public readonly notificationTopicArn: string;
+```
+
 - *Type:* `string`
 
 The notification topic ARN that delivers the event when a scan is finished.
@@ -99,6 +107,10 @@ The notification topic ARN that delivers the event when a scan is finished.
 ---
 
 ##### `toAddress`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanResultHandlerProps.property.toAddress"></a>
+
+```typescript
+public readonly toAddress: string;
+```
 
 - *Type:* `string`
 
@@ -118,6 +130,10 @@ const ecrImageScanTeamsWebhookHandlerProps: EcrImageScanTeamsWebhookHandlerProps
 
 ##### `notificationTopicArn`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps.property.notificationTopicArn"></a>
 
+```typescript
+public readonly notificationTopicArn: string;
+```
+
 - *Type:* `string`
 
 The notification topic ARN that delivers the event when a scan is finished.
@@ -125,6 +141,10 @@ The notification topic ARN that delivers the event when a scan is finished.
 ---
 
 ##### `webhookUrl`<sup>Required</sup> <a name="cdk-ecr-image-scan-handler.EcrImageScanTeamsWebhookHandlerProps.property.webhookUrl"></a>
+
+```typescript
+public readonly webhookUrl: string;
+```
 
 - *Type:* `string`
 
