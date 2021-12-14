@@ -2,7 +2,6 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "^2.0.0-rc.19",
       "type": "build"
     },
     {
@@ -19,23 +18,32 @@
     },
     {
       "name": "@types/node",
-      "version": "^10.17.0",
+      "version": "^14",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
+      "version": "^5",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
+      "version": "^5",
+      "type": "build"
+    },
+    {
+      "name": "aws-cdk-lib",
+      "version": "2.1.0",
+      "type": "build"
+    },
+    {
+      "name": "constructs",
+      "version": "10.0.5",
       "type": "build"
     },
     {
       "name": "esbuild",
-      "type": "build"
-    },
-    {
-      "name": "eslint",
+      "version": "0.14.3",
       "type": "build"
     },
     {
@@ -51,12 +59,17 @@
       "type": "build"
     },
     {
+      "name": "eslint",
+      "version": "^8",
+      "type": "build"
+    },
+    {
       "name": "jest",
       "type": "build"
     },
     {
       "name": "jest-junit",
-      "version": "^12",
+      "version": "^13",
       "type": "build"
     },
     {
@@ -81,7 +94,7 @@
     },
     {
       "name": "npm-check-updates",
-      "version": "^11",
+      "version": "^12",
       "type": "build"
     },
     {
@@ -115,22 +128,18 @@
     },
     {
       "name": "node-fetch",
+      "version": "2.6.6",
       "type": "bundled"
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.0.0-rc.19",
+      "version": "^2.1.0",
       "type": "peer"
     },
     {
       "name": "constructs",
       "version": "^10.0.5",
       "type": "peer"
-    },
-    {
-      "name": "aws-cdk-lib",
-      "version": "^2.0.0-rc.19",
-      "type": "runtime"
     },
     {
       "name": "aws-lambda",
@@ -138,7 +147,6 @@
     },
     {
       "name": "constructs",
-      "version": "^10.0.5",
       "type": "runtime"
     },
     {

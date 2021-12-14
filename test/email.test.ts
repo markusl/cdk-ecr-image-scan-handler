@@ -1,6 +1,6 @@
 import { App, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 import { EcrImageScanResultHandler } from '../src/index';
-import '@aws-cdk/assert/jest';
 
 test('Create EcrImageScanResultHandler', () => {
   const mockApp = new App();
@@ -12,37 +12,40 @@ test('Create EcrImageScanResultHandler', () => {
     notificationTopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
   });
 
-  expect(stack).toHaveResource('AWS::SNS::Subscription', {
-    Protocol: 'lambda',
-    TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
-    Endpoint: {
-      'Fn::GetAtt': [
-        'ecrscanresulthandlerEmailHandler46CCC244',
-        'Arn',
-      ],
+  const template = Template.fromStack(stack);
+  template.hasResource('AWS::SNS::Subscription', {
+    Properties: {
+      Protocol: 'lambda',
+      TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
+      Endpoint: {
+        'Fn::GetAtt': [
+          'ecrscanresulthandlerEmailHandler46CCC244',
+          'Arn',
+        ],
+      },
+      Region: 'eu-central-1',
     },
-    Region: 'eu-central-1',
   });
 
-  expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Handler: 'index.handler',
-    Role: {
-      'Fn::GetAtt': [
-        'EcrImageScanResultHandlerrole5C736648',
-        'Arn',
-      ],
-    },
-    Runtime: 'nodejs14.x',
-    Description: 'Handler for ECR Image Scan results',
-    Environment: {
-      Variables: {
-        FROM_ADDRESS: 'from@address.com',
-        TO_ADDRESS: 'to@address.com',
-        AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+  template.hasResource('AWS::Lambda::Function', {
+    Properties: {
+      Handler: 'index.handler',
+      Role: {
+        'Fn::GetAtt': [
+          'EcrImageScanResultHandlerrole5C736648',
+          'Arn',
+        ],
       },
+      Runtime: 'nodejs14.x',
+      Description: 'Handler for ECR Image Scan results',
+      Environment: {
+        Variables: {
+          FROM_ADDRESS: 'from@address.com',
+          TO_ADDRESS: 'to@address.com',
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+        },
+      },
+      FunctionName: 'EcrImageScanResultHandler',
     },
-    FunctionName: 'EcrImageScanResultHandler',
   });
 });
-
-

@@ -1,6 +1,6 @@
 import { App, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 import { EcrImageScanTeamsWebhookHandler } from '../src/teams';
-import '@aws-cdk/assert/jest';
 
 test('Create EcrImageScanTeamsWebhookHandler', () => {
   const mockApp = new App();
@@ -11,62 +11,69 @@ test('Create EcrImageScanTeamsWebhookHandler', () => {
     notificationTopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
   });
 
-  expect(stack).toHaveResource('AWS::SNS::Subscription', {
-    Protocol: 'lambda',
-    TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
-    Endpoint: {
-      'Fn::GetAtt': [
-        'ecrscanresulthandlerTeamsHandler4B51F183',
-        'Arn',
-      ],
-    },
-    Region: 'eu-central-1',
-  });
-
-  expect(stack).toHaveResource('AWS::Lambda::Function', {
-    Handler: 'index.handler',
-    Role: {
-      'Fn::GetAtt': [
-        'ecrscanresulthandlerTeamsHandlerServiceRoleC491FAD8',
-        'Arn',
-      ],
-    },
-    Runtime: 'nodejs14.x',
-    Description: 'ECR Image Scan results handler with Teams Webhook integration',
-    Environment: {
-      Variables: {
-        WEBHOOK_URL: 'https://outlook.office.com/webhook/xxxxx',
-        AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-      },
-    },
-  });
-
-  expect(stack).toHaveResource('AWS::IAM::Role', {
-    AssumeRolePolicyDocument: {
-      Statement: [
-        {
-          Action: 'sts:AssumeRole',
-          Effect: 'Allow',
-          Principal: {
-            Service: 'lambda.amazonaws.com',
-          },
-        },
-      ],
-      Version: '2012-10-17',
-    },
-    ManagedPolicyArns: [
-      {
-        'Fn::Join': [
-          '',
-          [
-            'arn:',
-            {
-              Ref: 'AWS::Partition',
-            },
-            ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole',
-          ],
+  const template = Template.fromStack(stack);
+  template.hasResource('AWS::SNS::Subscription', {
+    Properties: {
+      Protocol: 'lambda',
+      TopicArn: 'arn:aws:sns:eu-central-1:112233445566:ecr-repository-scan-completed-topic',
+      Endpoint: {
+        'Fn::GetAtt': [
+          'ecrscanresulthandlerTeamsHandler4B51F183',
+          'Arn',
         ],
       },
-    ],
+      Region: 'eu-central-1',
+    },
+  });
+
+  template.hasResource('AWS::Lambda::Function', {
+    Properties: {
+      Handler: 'index.handler',
+      Role: {
+        'Fn::GetAtt': [
+          'ecrscanresulthandlerTeamsHandlerServiceRoleC491FAD8',
+          'Arn',
+        ],
+      },
+      Runtime: 'nodejs14.x',
+      Description: 'ECR Image Scan results handler with Teams Webhook integration',
+      Environment: {
+        Variables: {
+          WEBHOOK_URL: 'https://outlook.office.com/webhook/xxxxx',
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+        },
+      },
+    },
+  });
+
+  template.hasResource('AWS::IAM::Role', {
+    Properties: {
+      AssumeRolePolicyDocument: {
+        Statement: [
+          {
+            Action: 'sts:AssumeRole',
+            Effect: 'Allow',
+            Principal: {
+              Service: 'lambda.amazonaws.com',
+            },
+          },
+        ],
+        Version: '2012-10-17',
+      },
+      ManagedPolicyArns: [
+        {
+          'Fn::Join': [
+            '',
+            [
+              'arn:',
+              {
+                Ref: 'AWS::Partition',
+              },
+              ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole',
+            ],
+          ],
+        },
+      ],
+    },
   });
 });
