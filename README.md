@@ -3,6 +3,8 @@
 
 # cdk-ecr-image-scan-handler
 
+[Amazon ECR image scanning](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) helps in identifying software vulnerabilities in your container images.
+
 With this CDK construct you can get automated notifications from ECR images that contain security findings when the AWS ECR image scan finishes.
 
 ## Usage

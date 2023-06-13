@@ -4,7 +4,7 @@ import { sendEmail } from './lambda/sendEmail';
 
 const ecr = new ECR.ECRClient({});
 
-exports.handler = async (event: AWSLambda.SNSEvent) => {
+export const handler = async (event: AWSLambda.SNSEvent) => {
   console.log(JSON.stringify(event, undefined, 2));
   const imageScanCompletedEvent = JSON.parse(event.Records[0].Sns.Message);
   const repositoryName = imageScanCompletedEvent.detail['repository-name'];

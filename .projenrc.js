@@ -13,30 +13,30 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorEmail: 'markus.lindqvist@iki.fi',
   stability: 'stable',
   defaultReleaseBranch: 'master',
-  minNodeVersion: '14.17.0',
+  typescriptVersion: '~5.1.3',
+  minNodeVersion: '16.20.0',
   tsconfig: {
     compilerOptions: {
-      lib: ['ES2020', 'DOM'],
+      lib: ['ES2022', 'DOM'],
+      target: 'ES2022',
     },
   },
-  cdkVersion: '2.1.0',
+  cdkVersion: '2.83.0',
   docgen: true,
   devDeps: [
-    '@aws-cdk/assert',
     '@types/aws-lambda',
     '@types/node-fetch',
-    'esbuild@0.14.3',
+    'esbuild@0.18.2',
   ],
   deps: [
     'aws-lambda',
-    'node-fetch',
     'constructs',
   ],
   bundledDeps: [
-    '@aws-sdk/client-ecr',
-    '@aws-sdk/client-ses',
     'aws-lambda',
     'node-fetch@2.6.6',
+    '@aws-sdk/client-ecr',
+    '@aws-sdk/client-ses',
   ],
 });
 

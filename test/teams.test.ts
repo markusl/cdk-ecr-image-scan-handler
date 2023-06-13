@@ -35,7 +35,7 @@ test('Create EcrImageScanTeamsWebhookHandler', () => {
           'Arn',
         ],
       },
-      Runtime: 'nodejs14.x',
+      Runtime: 'nodejs18.x',
       Description: 'ECR Image Scan results handler with Teams Webhook integration',
       Environment: {
         Variables: {

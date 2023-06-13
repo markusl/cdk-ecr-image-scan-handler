@@ -65,7 +65,7 @@ export const getTeamsMessageFromFindings = (findings: ECR.ImageScanFinding[], re
   return getTeamsMessage(sections, findings, repositoryName);
 };
 
-exports.handler = async (event: AWSLambda.SNSEvent) => {
+export const handler = async (event: AWSLambda.SNSEvent) => {
   console.log(JSON.stringify(event, undefined, 2));
 
   if (!process.env.WEBHOOK_URL) {

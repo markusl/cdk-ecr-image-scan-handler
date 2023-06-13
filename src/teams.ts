@@ -27,7 +27,7 @@ export class EcrImageScanTeamsWebhookHandler extends Construct {
     super(scope, id);
 
     const ecrScanResultHandlerLambda = new lambda_nodejs.NodejsFunction(this, 'TeamsHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_18_X,
       description: 'ECR Image Scan results handler with Teams Webhook integration',
       environment: {
         WEBHOOK_URL: props.webhookUrl,

@@ -1,7 +1,6 @@
-import '@aws-cdk/assert/jest';
 import * as ECR from '@aws-sdk/client-ecr';
-import { getTeamsMessageFromFindings } from '../src/teams.TeamsHandler';
 import { ExampleFindings } from './exampleFindings';
+import { getTeamsMessageFromFindings } from '../src/teams.TeamsHandler';
 
 test('getTeamsMessageFromFindings basic case', async () => {
   const finding: ECR.ImageScanFinding = {
